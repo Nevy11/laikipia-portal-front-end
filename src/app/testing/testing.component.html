@@ -7,5 +7,15 @@
 <div>
   <button (click)="toggle()" class="bg-success text-white btn">toggle</button>
 </div>
+<div>
+  <table>
+    <th></th>
+  </table>
+</div>
+<div *ngFor="let data of data$ | async">
+  <div>
+    {{ data | json }}
+  </div>
+</div>
 
 <div #timetable></div>
