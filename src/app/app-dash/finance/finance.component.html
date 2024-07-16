@@ -1,0 +1,107 @@
+<div class="h2">
+  <div class="my-5 pb-3">
+    <strong>Fee Balance:</strong>
+    <div>{{ FeeBalance }}</div>
+  </div>
+</div>
+
+<mat-accordion>
+  <mat-expansion-panel hideToggle class="bg-primary text-white my-3">
+    <mat-expansion-panel-header>
+      <mat-panel-title class="text-white"> Mpesa </mat-panel-title>
+      <mat-panel-description> pay your Fees via mpesa </mat-panel-description>
+    </mat-expansion-panel-header>
+    <p>
+      Pay your fees to your account using paybill number and account number as
+      your student's bank account number
+    </p>
+    <div class="clearfix">
+      <div class="float-end">
+        <button
+          mat-raised-button
+          class="btn bg-dark text-white"
+          (click)="openDialog()"
+        >
+          pay
+        </button>
+      </div>
+    </div>
+  </mat-expansion-panel>
+  <mat-expansion-panel
+    (opened)="panelOpenState.set(true)"
+    (closed)="panelOpenState.set(false)"
+    class="bg-primary text-white"
+  >
+    <mat-expansion-panel-header>
+      <mat-panel-title class="text-white">Equity </mat-panel-title>
+      <mat-panel-description class="text-dark">
+        pay your Fees via Equity bank
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <p>Pay directly to the student's school account to reflect in the portal</p>
+    <div class="clearfix">
+      <div class="float-end">
+        <button
+          mat-raised-button
+          class="btn bg-dark text-white"
+          (click)="openDialog()"
+        >
+          pay
+        </button>
+      </div>
+    </div>
+  </mat-expansion-panel>
+  <mat-expansion-panel class="bg-primary text-white my-3">
+    <mat-expansion-panel-header>
+      <mat-panel-title class="text-white"> Kcb bank </mat-panel-title>
+      <mat-panel-description>
+        pay your Fees via KCB bank
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <p>
+      Transferring funds from your personal kcb account to the school's account
+    </p>
+    <div class="clearfix">
+      <div class="float-end">
+        <button
+          mat-raised-button
+          class="btn bg-dark text-white"
+          (click)="openDialog()"
+        >
+          pay
+        </button>
+      </div>
+    </div>
+  </mat-expansion-panel>
+
+  <mat-expansion-panel class="bg-primary text-white my-3">
+    <mat-expansion-panel-header>
+      <mat-panel-title class="text-white"> Cooperative bank </mat-panel-title>
+      <mat-panel-description>
+        pay your Fees via Cooperative bank
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <p>Transfer funds from Cooperative bank to your account</p>
+    <div class="clearfix">
+      <div class="float-end">
+        <button
+          mat-raised-button
+          class="btn bg-dark text-white"
+          (click)="openDialog()"
+        >
+          pay
+        </button>
+      </div>
+    </div>
+  </mat-expansion-panel>
+</mat-accordion>
+
+<div class="my-3">
+  <button
+    mat-raised-button
+    class="btn bg-dark text-white"
+    (click)="openDialog()"
+  >
+    Fee statement
+  </button>
+</div>

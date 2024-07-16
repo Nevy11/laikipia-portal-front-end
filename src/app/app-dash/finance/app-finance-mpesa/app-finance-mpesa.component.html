@@ -1,0 +1,24 @@
+<h2 mat-dialog-title>Dialog with elements</h2>
+<mat-dialog-content
+  >This dialog showcases the title, close, content and actions
+  elements.</mat-dialog-content
+>
+<div class="clearfix">
+  <div class="floatend">
+    <mat-dialog-actions>
+      <button mat-button (click)="mpesaOk()">Pay {{ balance }}</button>
+    </mat-dialog-actions>
+  </div>
+
+  <div class="floatend">
+    <mat-dialog-actions>
+      <button mat-button (click)="checkBalance()">check Mpesa Balance</button>
+    </mat-dialog-actions>
+  </div>
+
+  <div class="floatstart">
+    <mat-dialog-actions>
+      <button mat-button mat-dialog-close>cancel</button>
+    </mat-dialog-actions>
+  </div>
+</div>

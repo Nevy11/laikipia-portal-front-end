@@ -1,4 +1,11 @@
-import { Component, OnInit, inject } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  OnInit,
+  Renderer2,
+  inject,
+} from '@angular/core';
 import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
 import { map } from 'rxjs/operators';
 
@@ -7,27 +14,27 @@ import { map } from 'rxjs/operators';
   templateUrl: './app-dash.component.html',
   styleUrl: './app-dash.component.scss',
 })
-export class AppDashComponent implements OnInit {
-  ngOnInit(): void {
-    console.log(this.cards.subscribe((data) => console.log(data)));
-  }
+export class AppDashComponent implements OnInit, AfterViewInit {
   private breakpointObserver = inject(BreakpointObserver);
   studentName: string = 'Stephen Mainda';
+  phoneStudentName: string = 'Stephen';
   regNo: string = 'SC/COM/0032/22';
   year: number = 2;
   sem: number = 3;
+  feeBalance: number = 16500;
   progressValue: number = 70;
   course: string = 'Bachelor of science(Computer Science';
-  /** Based on the screen size, switch from standard to one column per row */
 
+  constructor(private render: Renderer2, private elementRef: ElementRef) {}
+
+  /** Based on the screen size, switch from standard to one column per row */
   cards = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
     map(({ matches }) => {
-      console.log(matches);
       if (matches) {
         return [
           {
-            title: 'Card one',
-            cols: 1,
+            title: this.phoneStudentName,
+            cols: 2,
             rows: 1,
             // content: `Reg No: ${this.regNo} \n Year: ${this.year} semister ${this.sem}`,
             regNo: this.regNo,
@@ -35,15 +42,34 @@ export class AppDashComponent implements OnInit {
             sem: this.sem,
             studentInfo: true,
             course: 'Bachelor of Science(ComputerScience)',
+            bufferValue: 10,
           },
           {
-            title: 'Card two',
+            title: 'hostels',
             cols: 1,
             rows: 1,
             content: ``,
+            bufferValue: 10,
+            house: '',
+            hostelBooking: true,
           },
-          { title: 'Card three', cols: 1, rows: 1, content: 'wierd' },
-          { title: 'Card four', cols: 1, rows: 1, content: 'Eeeuuu' },
+          {
+            title: 'Finance',
+            cols: 1,
+            rows: 2,
+            bufferValue: 10,
+            finance: true,
+            FeeBalance: this.feeBalance,
+            mobileDevice: true,
+          },
+          {
+            title: 'Assistant',
+            cols: 1,
+            rows: 1,
+            content: 'Eeeuuu',
+            bufferValue: 10,
+            virtualAssistant: true,
+          },
         ];
       }
 
@@ -57,12 +83,46 @@ export class AppDashComponent implements OnInit {
           year: this.year,
           sem: this.sem,
           studentInfo: true,
-          course: 'Bachelor of Science(ComputerScience)',
+          course: 'Bachelor of Science( Computer Science )',
+          bufferValue: 30,
         },
-        { title: 'Card 2', cols: 1, rows: 1, content: 'this is a funny' },
-        { title: 'Card 3', cols: 1, rows: 2, content: 'this is a Stupid' },
-        { title: 'Card 4', cols: 1, rows: 1, content: 'wooow' },
+        {
+          title: 'Book hostel',
+          cols: 1,
+          rows: 1,
+          content: 'this is a funny',
+          bufferValue: 30,
+          hostelBooking: true,
+        },
+        {
+          title: 'Finance',
+          cols: 1,
+          rows: 2,
+          content: 'this is a Stupid',
+          bufferValue: 30,
+          finance: true,
+          FeeBalance: this.feeBalance,
+          mobileDevice: false,
+        },
+        {
+          title: 'Virtual Assistant',
+          cols: 1,
+          rows: 1,
+          content: 'wooow',
+          bufferValue: 30,
+          virtualAssistant: true,
+        },
       ];
     })
   );
+  ngOnInit(): void {
+    const element =
+      this.elementRef.nativeElement.querySelector('.progress-bar');
+    this.render.setStyle(element, 'width', `${this.progressValue.toString()}%`);
+    const progress_bar =
+      this.elementRef.nativeElement.querySelector('.progress-bar');
+    this.render.setStyle(progress_bar, 'background-color', 'gray');
+    this.render.setStyle(progress_bar, 'color', 'white');
+  }
+  ngAfterViewInit(): void {}
 }
