@@ -25,6 +25,7 @@ export class FinanceComponent implements OnInit {
   panelOpenState = signal(false);
   dialog = inject(MatDialog);
   BreakPointObserver = inject(BreakpointObserver);
+  name = 'Stephen Mainda';
   ngOnInit(): void {
     console.log(this.BreakPointObserver);
     // console.log(this.financeService.joke$);

@@ -1,10 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, ViewContainerRef } from '@angular/core';
+import { AppTimetableComponent } from '../../app-timetable/app-timetable.component';
 
 @Component({
   selector: 'hinv-hostels',
   templateUrl: './hostels.component.html',
-  styleUrl: './hostels.component.scss'
+  styleUrl: './hostels.component.scss',
 })
-export class HostelsComponent {
-
+export class HostelsComponent implements OnInit {
+  constructor(private vcr: ViewContainerRef) {}
+  ngOnInit(): void {
+    this.vcr.createComponent(AppTimetableComponent);
+  }
 }
