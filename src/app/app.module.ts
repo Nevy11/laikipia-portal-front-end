@@ -34,7 +34,8 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { AppFinanceMpesaComponent } from './app-dash/finance/app-finance-mpesa/app-finance-mpesa.component';
 import { provideHttpClient } from '@angular/common/http';
 import { MobileAppFinanceComponent } from './app-dash/finance/mobile-app-finance/mobile-app-finance.component';
-import { TestingComponent } from './testing/testing.component';
+import { TestingModule } from './testing/testing.module';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -49,10 +50,10 @@ import { TestingComponent } from './testing/testing.component';
     AppVirtualAssistantComponent,
     AppFinanceMpesaComponent,
     MobileAppFinanceComponent,
-    TestingComponent,
   ],
   imports: [
     BrowserModule,
+    TestingModule,
     AppRoutingModule,
     MatToolbarModule,
     MatButtonModule,
@@ -70,6 +71,8 @@ import { TestingComponent } from './testing/testing.component';
     MatProgressBarModule,
     MatDialogModule,
     MatExpansionModule,
+    RouterLink,
+    RouterLinkActive,
   ],
   providers: [
     provideClientHydration(),

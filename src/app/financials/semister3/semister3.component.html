@@ -1,0 +1,37 @@
+<div *ngIf="isPhone">
+  <button type="button" (click)="showExpense(1)" class="btn text-dark mx-3">
+    Year 1
+  </button>
+  <button type="button" (click)="showExpense(2)" class="btn text-dark mx-3">
+    Year 2
+  </button>
+  <button type="button" (click)="showExpense(3)" class="btn text-dark mx-3">
+    Year 3
+  </button>
+</div>
+<div *ngIf="!isPhone">
+  <button type="button" (click)="showExpense(1)" class="btn text-dark mx-4">
+    First Year
+  </button>
+  <button type="button" (click)="showExpense(2)" class="btn text-dark mx-4">
+    Second Year
+  </button>
+  <button type="button" (click)="showExpense(3)" class="btn text-dark mx-4">
+    Third Year
+  </button>
+</div>
+<div *ngIf="btn === 1">
+  <div [hidden]="hideCost">
+    <hinv-cost></hinv-cost>
+  </div>
+</div>
+<div *ngIf="btn === 2">
+  <div [hidden]="hideCost">
+    <hinv-cost2-year></hinv-cost2-year>
+  </div>
+</div>
+<div *ngIf="btn === 3">
+  <div [hidden]="hideCost">
+    <hinv-cost3year></hinv-cost3year>
+  </div>
+</div>

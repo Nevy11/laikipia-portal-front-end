@@ -81,7 +81,7 @@
             },
             "development": {
               "buildTarget": "LaikipiaPortal:build:development",
-              "proxyConfig": "src/proxy.config.json"
+              "proxyConfig": "src/proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"

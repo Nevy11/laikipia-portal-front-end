@@ -1,0 +1,26 @@
+<table class="table">
+  <tbody>
+    <tr class="tr">
+      <th class="th">Expenditure</th>
+      <th class="th">Cost</th>
+    </tr>
+    <tr class="tr" *ngFor="let data of expenses">
+      <td>{{ data["Expenditure"] }}</td>
+      <td>{{ data["cost"] }}</td>
+    </tr>
+  </tbody>
+</table>
+<table class="table">
+  <tbody>
+    <tr class="tr">
+      <th class="th">Total</th>
+      <th class="th">Paid</th>
+      <th class="th">Balance</th>
+    </tr>
+    <tr class="tr">
+      <td #total class="td"></td>
+      <td #paid class="td"></td>
+      <td #balance class="td"></td>
+    </tr>
+  </tbody>
+</table>

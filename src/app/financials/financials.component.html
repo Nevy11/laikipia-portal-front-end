@@ -1,0 +1,21 @@
+<!-- <hinv-cost></hinv-cost> -->
+<div class="my-5 py-5 mx-3 px-3 h2">
+  <div>
+    <button
+      type="button"
+      class="mx-5 px-5 btn text-dark"
+      (click)="showSemister()"
+      style="text-align: center"
+    >
+      semisters
+    </button>
+  </div>
+  <div class="my-3 py-3" [hidden]="semister">
+    <div *ngIf="year === 1"><hinv-semister-button></hinv-semister-button></div>
+    <div *ngIf="year === 2"><hinv-semister2></hinv-semister2></div>
+    <div *ngIf="year === 3"><hinv-semister3></hinv-semister3></div>
+    <div *ngIf="year === 4"><hinv-semister4></hinv-semister4></div>
+  </div>
+  <!-- <router-outlet></router-outlet> -->
+</div>
+<div [hidden]="hideCosts"></div>

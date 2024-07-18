@@ -10,6 +10,10 @@ import {
 import { AppTimetableComponent } from '../app-timetable/app-timetable.component';
 import { FinanceComponent } from '../app-dash/finance/finance.component';
 import { TestingService } from './testing.service';
+import { filter, map, pluck, shareReplay } from 'rxjs';
+import { HttpEventType, HttpResponse } from '@angular/common/http';
+import { Rooms } from './testing';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'hinv-testing',
@@ -20,10 +24,21 @@ export class TestingComponent implements OnInit {
   // name = 'Hannetsiagas';
   timetable = this.vcr.createComponent(AppTimetableComponent);
   toggleValue: boolean = true;
-  data$ = this.testingService.roomsData$;
-  cats$ = this.testingService.cats$.subscribe((resp) => {
-    console.log(resp);
+  allRooms!: any;
+  // data$ = this.testingService.getAllRooms();
+  data$ = this.activatedRoute.data.pipe(pluck('rooms'), shareReplay(1));
+
+  cats$ = this.testingService.cats$;
+  jokes$ = this.testingService.jokes$;
+
+  addRoom$ = this.testingService.addRoom().subscribe;
+  updateRoom$ = this.testingService.updateRoom('3').subscribe;
+  // .pipe(filter((resp) => resp instanceof HttpResponse))
+  // .subscribe();
+  getRoom$ = this.testingService.getRoom('3').subscribe((resp) => {
+    // console.log(resp);
   });
+  deleteRoom$ = this.testingService.deleteRoom('1').subscribe;
   @ViewChild('jina', { static: true }) jina!: ElementRef;
   @ViewChild('age', { static: true }) age!: ElementRef;
   @ViewChild('name', { static: true }) name!: ElementRef;
@@ -32,9 +47,16 @@ export class TestingComponent implements OnInit {
   @ContentChild(FinanceComponent) financeComponent!: FinanceComponent;
   constructor(
     private vcr: ViewContainerRef,
-    private testingService: TestingService
+    private testingService: TestingService,
+    private activatedRoute: ActivatedRoute
   ) {}
   ngOnInit(): void {
+    if (this.financeComponent) {
+      this.financeComponent.name = 'Stephen';
+    }
+    this.activatedRoute.data.subscribe((resp) => {
+      console.log(resp['rooms']['2']);
+    });
     this.jina.nativeElement.innerText = 'Hilton Hotel';
     this.name.nativeElement.innerText = 'Hannetsiagas';
     // console.log(this.name);
@@ -46,18 +68,12 @@ export class TestingComponent implements OnInit {
     //   : console.log('Timetable shown');
     // const firstElement = this.vcr.get(0)?.detach();
     // console.log(firstElement);
-    this.financeComponent.name = '';
-    console.log(this.data$);
+
+    // console.log(this.data$);
+    // this.data$.unsubscribe();
   }
   toggle() {
-    this.toggleValue = !this.toggleValue;
-    if (this.toggleValue) {
-      this.timetable.destroy();
-      this.toggleValue = false;
-    }
-    if (this.toggleValue === false) {
-      this.toggleValue = true;
-    }
-    // console.log('Timetable shown in the toggle button');
+    console.log('pressed');
+    return this.testingService.updateRoom('3').subscribe();
   }
 }

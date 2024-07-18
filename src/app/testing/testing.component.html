@@ -4,18 +4,60 @@
 <div #jina></div>
 
 <div>Hey</div>
+<!-- <div *ngFor="let joke of jokes$ | async">
+  <div>
+    {{ joke["setup"] }}
+  </div>
+  <div>
+    {{ joke["punchline"] }}
+  </div>
+</div> -->
+<div *ngIf="jokes$ | async as joke">
+  <div>
+    {{ joke["setup"] }}
+  </div>
+  <div>
+    {{ joke["punchline"] }}
+  </div>
+</div>
+
 <div>
   <button (click)="toggle()" class="bg-success text-white btn">toggle</button>
 </div>
 <div>
   <table>
-    <th></th>
+    <tbody>
+      <tr></tr>
+    </tbody>
   </table>
 </div>
 <div *ngFor="let data of data$ | async">
-  <div>
+  <!-- <div>
     {{ data | json }}
+  </div> -->
+  <div>
+    {{ data["roomNumber"] }}
+  </div>
+  <div>
+    {{ data["roomType"] }}
+  </div>
+  <div>
+    {{ data["amenities"] }}
+  </div>
+  <div>
+    {{ data["price"] }}
+  </div>
+  <div>
+    {{ data["checkinTime"] | date }}
+  </div>
+  <div>
+    {{ data["checkoutTime"] | date }}
+  </div>
+  <div>
+    {{ data["rating"] }}
   </div>
 </div>
+
+<!-- @for (item of items; track $index) {} -->
 
 <div #timetable></div>

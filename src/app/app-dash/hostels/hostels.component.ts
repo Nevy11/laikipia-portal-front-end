@@ -8,7 +8,5 @@ import { AppTimetableComponent } from '../../app-timetable/app-timetable.compone
 })
 export class HostelsComponent implements OnInit {
   constructor(private vcr: ViewContainerRef) {}
-  ngOnInit(): void {
-    this.vcr.createComponent(AppTimetableComponent);
-  }
+  ngOnInit(): void {}
 }
