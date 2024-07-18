@@ -1,24 +1,26 @@
 import {
+  ChangeDetectionStrategy,
   Component,
   ContentChild,
   ElementRef,
   OnInit,
   ViewChild,
   ViewContainerRef,
-  contentChild,
+  ViewEncapsulation,
+  signal,
 } from '@angular/core';
 import { AppTimetableComponent } from '../app-timetable/app-timetable.component';
 import { FinanceComponent } from '../app-dash/finance/finance.component';
 import { TestingService } from './testing.service';
-import { filter, map, pluck, shareReplay } from 'rxjs';
-import { HttpEventType, HttpResponse } from '@angular/common/http';
-import { Rooms } from './testing';
+import { pluck, shareReplay } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'hinv-testing',
   templateUrl: './testing.component.html',
   styleUrl: './testing.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  encapsulation: ViewEncapsulation.None,
 })
 export class TestingComponent implements OnInit {
   // name = 'Hannetsiagas';
@@ -59,21 +61,22 @@ export class TestingComponent implements OnInit {
     });
     this.jina.nativeElement.innerText = 'Hilton Hotel';
     this.name.nativeElement.innerText = 'Hannetsiagas';
-    // console.log(this.name);
     this.age.nativeElement.innerText = 23;
-    // console.log('Timetable: ');
-    // console.log(this.age);
-    // this.toggleValue
-    //   ? this.timetable.destroy()
-    //   : console.log('Timetable shown');
-    // const firstElement = this.vcr.get(0)?.detach();
-    // console.log(firstElement);
-
-    // console.log(this.data$);
-    // this.data$.unsubscribe();
   }
   toggle() {
     console.log('pressed');
     return this.testingService.updateRoom('3').subscribe();
   }
+
+  events: string[] = ['TestingNavigationComponent'];
+  opened!: boolean;
+
+  // shouldRun = /(^|.)(stackblitz|webcontainer).(io|com)$/.test(
+  // window.location.host
+  // );
+  showFiller = false;
+  readonly panelOpenState = signal(false);
+
+  items = ['First Year', 'Second Year', 'Third Year', 'Forth Year'];
+  expandedIndex = 0;
 }

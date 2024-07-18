@@ -11,7 +11,7 @@ export class AppVirtualAssistantComponent implements OnInit {
   @ViewChild('name', { static: true }) name!: ElementRef;
   ngOnInit(): void {
     if (this.name.nativeElement) {
-      this.name.nativeElement.innerText('HiltonHotel');
+      this.name.nativeElement.innerText = 'HiltonHotel';
     }
 
     console.log('Stephen');

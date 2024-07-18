@@ -4,6 +4,7 @@ import {
   ElementRef,
   OnInit,
   Renderer2,
+  ViewChild,
   inject,
 } from '@angular/core';
 import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';

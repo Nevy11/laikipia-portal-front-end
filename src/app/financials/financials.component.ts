@@ -1,28 +1,27 @@
 import {
+  ChangeDetectionStrategy,
   Component,
-  ContentChild,
-  ElementRef,
   OnInit,
-  ViewChild,
   ViewContainerRef,
+  inject,
 } from '@angular/core';
-import { SemisterButtonComponent } from './semister-button/semister-button.component';
-import { Semister2Component } from './semister2/semister2.component';
-import { Semister3Component } from './semister3/semister3.component';
-import { Semister4Component } from './semister4/semister4.component';
 import { FinanceService } from './finance.service';
+import { BreakpointObserver } from '@angular/cdk/layout';
 
 @Component({
   selector: 'hinv-financials',
   templateUrl: './financials.component.html',
   styleUrl: './financials.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FinancialsComponent implements OnInit {
-  hideCosts: boolean = true;
-  semister: boolean = true;
-  year = this.financeService.year;
-  @ContentChild('btn') btn!: SemisterButtonComponent;
-  @ViewChild('myButton', { static: true }) myButton!: ElementRef;
+  hideCosts!: boolean;
+  semister: boolean = false;
+  year: number = this.financeService.year;
+  breakPointObserver = inject(BreakpointObserver);
+  feeBalance: number = 15000;
+  accountBalance: number = 16000;
+  defict: number = this.accountBalance - this.feeBalance;
   constructor(
     private vcr: ViewContainerRef,
     private financeService: FinanceService

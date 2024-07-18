@@ -6,6 +6,7 @@ import { Finance } from './finance';
 })
 export class FinanceService {
   year = 4;
+  sem = 2;
   paid = 95000;
   total = 10500;
   balance = this.paid - this.total;

@@ -11,7 +11,7 @@ import { map, shareReplay } from 'rxjs/operators';
 export class AppNavComponent {
   private breakpointObserver = inject(BreakpointObserver);
   fname = 'Stephen';
-
+  showFiller = false;
   isHandset$: Observable<boolean> = this.breakpointObserver
     .observe(Breakpoints.Handset)
     .pipe(

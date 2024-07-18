@@ -1,7 +1,7 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FinanceService } from '../finance.service';
 import { ActivatedRoute } from '@angular/router';
-import { pluck } from 'rxjs';
+import { Transaction } from './transactions';
 
 @Component({
   selector: 'hinv-cost',
@@ -23,8 +23,24 @@ export class CostComponent implements OnInit {
     // this.activateRoute.data.subscribe((data) => {
     //   console.log(data);
     // });
-    this.total.nativeElement.innerText = this.financeService.total;
-    this.paid.nativeElement.innerText = this.financeService.total;
-    this.balance.nativeElement.innerText = this.financeService.balance;
+    // this.total.nativeElement.innerText = this.financeService.total;
+    // this.paid.nativeElement.innerText = this.financeService.total;
+    // this.balance.nativeElement.innerText = this.financeService.balance;
+  }
+  displayedColumns: string[] = ['item', 'cost'];
+  transactions: Transaction[] = [
+    { item: 'Beach ball', cost: 4 },
+    { item: 'Towel', cost: 5 },
+    { item: 'Frisbee', cost: 2 },
+    { item: 'Sunscreen', cost: 4 },
+    { item: 'Cooler', cost: 25 },
+    { item: 'Swim suit', cost: 15 },
+  ];
+
+  /** Gets the total cost of all transactions. */
+  getTotalCost() {
+    return this.transactions
+      .map((t) => t.cost)
+      .reduce((acc, value) => acc + value, 0);
   }
 }

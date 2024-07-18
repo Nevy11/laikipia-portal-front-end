@@ -7,47 +7,46 @@
     [mode]="(isHandset$ | async) ? 'over' : 'side'"
     [opened]="(isHandset$ | async) === false"
   >
-    <mat-toolbar>Laikipia University</mat-toolbar>
+    <div class="h5 my-3">Laikipia University</div>
 
-    <mat-nav-list>
+    <mat-nav-list #drawer class="example-sidenav" mode="side">
       <a mat-list-item [routerLink]="'dashboard'">
-        <!-- <mat-icon
-          aria-hidden="false"
-          aria-label="Example home icon"
-          fontIcon="home"
-        ></mat-icon> -->
-        Home
+        <div style="color: #fe1e24">Home</div>
       </a>
-      <a mat-list-item [routerLink]="'repository'">Repository</a>
-      <a mat-list-item [routerLink]="'finance'">Finance</a>
-      <a mat-list-item [routerLink]="'academic'">Academic</a>
-      <a mat-list-item [routerLink]="'timetable'">TimeTable</a>
-      <a mat-list-item href="testing">testing</a>
-      <a mat-list-item [routerLink]="'assistant'">Assistant</a>
+      <a mat-list-item [routerLink]="'repository'"
+        ><div style="color: #fe1e24">Repository</div></a
+      >
+      <a mat-list-item [routerLink]="'finance'"
+        ><div style="color: #fe1e24">Finance</div></a
+      >
+
+      <a mat-list-item [routerLink]="'academic'"
+        ><div style="color: #fe1e24">Academic</div></a
+      >
+      <a mat-list-item [routerLink]="'timetable'"
+        ><div style="color: #fe1e24">TimeTable</div></a
+      >
+      <a mat-list-item href="testing"
+        ><div style="color: #fe1e24">testing</div></a
+      >
+      <a mat-list-item [routerLink]="'assistant'"
+        ><div style="color: #fe1e24">Assistant</div></a
+      >
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
     <mat-toolbar style="background-color: #f4484d">
-      @if (isHandset$ | async) {
-      <button
-        type="button"
-        aria-label="Toggle sidenav"
-        mat-icon-button
-        (click)="drawer.toggle()"
-      >
-        <mat-icon aria-label="Side nav toggle icon">LU</mat-icon>
-      </button>
-
-      }
+      <div class="example-sidenav-content">
+        <button type="button" mat-button (click)="drawer.toggle()">
+          <mat-icon>menu</mat-icon>
+        </button>
+      </div>
       <span>{{ fname }}'s portal</span>
+      <mat-menu #menu="matMenu">Laikipia University</mat-menu>
     </mat-toolbar>
     <!-- Add Content Here -->
-    <!-- <div>{{ isHandset$ | async }}</div> -->
-    <mat-menu #menu="matMenu"> lu </mat-menu>
-    <!-- <hinv-app-dash></hinv-app-dash> -->
-    <!-- <hinv-app-drag-ndrop></hinv-app-drag-ndrop>
-    <hinv-app-repository></hinv-app-repository>
-    <hinv-app-timetable></hinv-app-timetable> -->
+    <!-- <div style="background-color: lightgrey"> -->
     <router-outlet></router-outlet>
+    <!-- </div> -->
   </mat-sidenav-content>
 </mat-sidenav-container>

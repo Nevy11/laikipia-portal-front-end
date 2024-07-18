@@ -1,3 +1,22 @@
+<div>
+  <hinv-fee-structure></hinv-fee-structure>
+</div>
+
+<mat-tab-group animationDuration="2000ms">
+  <mat-tab label="First Year">
+    <hinv-cost></hinv-cost>
+  </mat-tab>
+  <mat-tab label="Second Year">
+    <hinv-cost-year2></hinv-cost-year2>
+  </mat-tab>
+  <mat-tab label="Third Year">
+    <hinv-cost-year3></hinv-cost-year3>
+  </mat-tab>
+  <mat-tab label="Forth Year">
+    <hinv-cost-year4></hinv-cost-year4>
+  </mat-tab>
+</mat-tab-group>
+
 <!-- <hinv-cost></hinv-cost> -->
 <div class="my-5 py-5 mx-3 px-3 h2">
   <div>
@@ -7,14 +26,24 @@
       (click)="showSemister()"
       style="text-align: center"
     >
-      semisters
+      Pay Fees
     </button>
   </div>
-  <div class="my-3 py-3" [hidden]="semister">
-    <div *ngIf="year === 1"><hinv-semister-button></hinv-semister-button></div>
-    <div *ngIf="year === 2"><hinv-semister2></hinv-semister2></div>
-    <div *ngIf="year === 3"><hinv-semister3></hinv-semister3></div>
-    <div *ngIf="year === 4"><hinv-semister4></hinv-semister4></div>
+  <div class="my-3 py-3">
+    <div [hidden]="semister">
+      <hinv-mpesa></hinv-mpesa>
+      <hinv-equity></hinv-equity>
+      <hinv-co-op></hinv-co-op>
+      <hinv-kcb></hinv-kcb>
+    </div>
   </div>
-  <!-- <router-outlet></router-outlet> -->
+  <mat-list>
+    <mat-list-item>FeeBalance: {{ feeBalance }}</mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item>Account Balance: {{ accountBalance }}</mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item>Defict: {{ defict }}</mat-list-item>
+  </mat-list>
 </div>
+
+<hinv-cost-year2></hinv-cost-year2>

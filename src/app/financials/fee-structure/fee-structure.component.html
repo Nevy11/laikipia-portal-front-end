@@ -1,0 +1,42 @@
+<div class="clearfix">
+  <div class="float-end">
+    <!-- <button
+      mat-raised-button
+      matTooltip="print Fee structure"
+      class="bg-primary text-white"
+      (click)="printDiv('feeStatement')"
+    >
+      <mat-icon>menu</mat-icon>
+      Print
+    </button> -->
+    <!-- <button mat-raised-button >print</button> -->
+  </div>
+</div>
+<div id="feeStatement">
+  <div class="align-items-center" style="text-align: center">
+    <hinv-lu-info></hinv-lu-info>
+  </div>
+  <hr style="border: 1px solid" />
+
+  <hinv-student-info2></hinv-student-info2>
+
+  <div *ngIf="year === 1">
+    <hinv-year1-fees></hinv-year1-fees>
+  </div>
+  <div *ngIf="year === 2">
+    <hinv-year2-fees></hinv-year2-fees>
+  </div>
+  <div *ngIf="year === 3">
+    <hinv-year3-fees></hinv-year3-fees>
+  </div>
+  <div *ngIf="year === 4">
+    <hinv-year4-fees></hinv-year4-fees>
+  </div>
+</div>
+
+<!-- @if (isHandset$ | async) { mobile
+  <hinv-student-info2></hinv-student-info2>
+
+  }@else { laptop
+  <hinv-student-info2></hinv-student-info2>
+  } -->

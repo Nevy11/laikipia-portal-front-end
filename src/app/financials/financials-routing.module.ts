@@ -13,6 +13,7 @@ const routes: Routes = [
       costs: CostGuard,
     },
   },
+  // { path: 'costYear2', loadChildren: () => import('./cost-year2/cost-year2.module').then(m => m.CostYear2Module) },
 ];
 
 @NgModule({
