@@ -5,7 +5,7 @@ import { Finance } from './finance';
   providedIn: 'root',
 })
 export class FinanceService {
-  year = 4;
+  year = 1;
   sem = 2;
   paid = 95000;
   total = 10500;

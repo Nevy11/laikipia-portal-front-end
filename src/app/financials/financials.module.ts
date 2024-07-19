@@ -31,6 +31,7 @@ import { Year1FeesComponent } from './fee-structure/year1-fees/year1-fees.compon
 import { Year2FeesComponent } from './fee-structure/year2-fees/year2-fees.component';
 import { Year3FeesComponent } from './fee-structure/year3-fees/year3-fees.component';
 import { Year4FeesComponent } from './fee-structure/year4-fees/year4-fees.component';
+import { TotalComponent } from './fee-structure/total/total.component';
 
 @NgModule({
   declarations: [
@@ -56,6 +57,7 @@ import { Year4FeesComponent } from './fee-structure/year4-fees/year4-fees.compon
     Year2FeesComponent,
     Year3FeesComponent,
     Year4FeesComponent,
+    TotalComponent,
   ],
   imports: [
     CommonModule,
