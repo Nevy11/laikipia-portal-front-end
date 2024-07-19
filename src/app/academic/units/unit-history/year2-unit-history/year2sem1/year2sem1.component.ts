@@ -20,7 +20,7 @@ export class Year2sem1Component {
   from = this.admissionYear;
   to = this.admissionYear + 1;
   year = this.unitService.year;
-  unitHistory = this.unitService.units;
+  unitHistory = this.unitService;
   dataSource = this.unitHistory;
   displayedColumns: string[] = ['unitCode', 'UnitName', 'Option', 'Status'];
 }

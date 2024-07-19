@@ -16,6 +16,13 @@ import { Year3sem1Component } from './year3-unit-history/year3sem1/year3sem1.com
 import { Year3sem2Component } from './year3-unit-history/year3sem2/year3sem2.component';
 import { Year4sem1Component } from './year4-unit-history/year4sem1/year4sem1.component';
 import { Year4sem2Component } from './year4-unit-history/year4sem2/year4sem2.component';
+import { Tableyear1sem1Component } from './year1-unit-history/year1sem2/tableyear1sem1/tableyear1sem1.component';
+import { TableYear1sem2Component } from './year2-unit-history/year2sem1/table-year1sem2/table-year1sem2.component';
+import { TableYear2Sem1Component } from './year2-unit-history/year2sem2/table-year2-sem1/table-year2-sem1.component';
+import { TableYear2Sem2Component } from './year3-unit-history/year3sem1/table-year2-sem2/table-year2-sem2.component';
+import { TableYear3Sem1Component } from './year3-unit-history/year3sem2/table-year3-sem1/table-year3-sem1.component';
+import { TableYear3sem2Component } from './year4-unit-history/year4sem1/table-year3sem2/table-year3sem2.component';
+import { TableYear4Sem1Component } from './year4-unit-history/year4sem2/table-year4-sem1/table-year4-sem1.component';
 @NgModule({
   declarations: [
     UnitHistoryComponent,
@@ -31,6 +38,13 @@ import { Year4sem2Component } from './year4-unit-history/year4sem2/year4sem2.com
     Year3sem2Component,
     Year4sem1Component,
     Year4sem2Component,
+    Tableyear1sem1Component,
+    TableYear1sem2Component,
+    TableYear2Sem1Component,
+    TableYear2Sem2Component,
+    TableYear3Sem1Component,
+    TableYear3sem2Component,
+    TableYear4Sem1Component,
   ],
   imports: [
     CommonModule,

@@ -1,0 +1,9 @@
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  <mat-text-column name="unitCode"></mat-text-column>
+  <mat-text-column name="UnitName"></mat-text-column>
+  <mat-text-column name="Option"></mat-text-column>
+  <mat-text-column name="Status"></mat-text-column>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+</table>

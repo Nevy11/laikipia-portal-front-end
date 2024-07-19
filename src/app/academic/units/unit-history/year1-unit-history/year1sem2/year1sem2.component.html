@@ -8,7 +8,11 @@
         unit history for semister 1 year 1
       </mat-panel-description>
     </mat-expansion-panel-header>
-    <p>This is the primary content of the panel.</p>
+    <div>
+      <hinv-tableyear1sem1
+        [displayedColumns]="displayedColumns"
+      ></hinv-tableyear1sem1>
+    </div>
   </mat-expansion-panel>
   <!-- <mat-expansion-panel
     (opened)="panelOpenState.set(true)"

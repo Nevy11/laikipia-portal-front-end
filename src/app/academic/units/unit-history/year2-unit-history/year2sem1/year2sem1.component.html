@@ -7,7 +7,9 @@
         unit history for semister 1 year 1
       </mat-panel-description>
     </mat-expansion-panel-header>
-    <p>This is the primary content of the panel.</p>
+    <hinv-tableyear1sem1
+      [displayedColumns]="displayedColumns"
+    ></hinv-tableyear1sem1>
   </mat-expansion-panel>
   <mat-expansion-panel
     (opened)="panelOpenState.set(true)"
@@ -19,6 +21,10 @@
         Currently I am {{ panelOpenState() ? "open" : "closed" }}
       </mat-panel-description>
     </mat-expansion-panel-header>
-    <p>I'm visible because I am open</p>
+    <div>
+      <hinv-table-year1sem2
+        [displayedColumns]="displayedColumns"
+      ></hinv-table-year1sem2>
+    </div>
   </mat-expansion-panel>
 </mat-accordion>
