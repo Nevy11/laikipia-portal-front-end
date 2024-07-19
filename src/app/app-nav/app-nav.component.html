@@ -1,7 +1,7 @@
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav
     #drawer
-    class="sidenav"
+    class="sidenav text-white bg-danger"
     fixedInViewport
     [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
     [mode]="(isHandset$ | async) ? 'over' : 'side'"
@@ -11,37 +11,43 @@
 
     <mat-nav-list #drawer class="example-sidenav" mode="side">
       <a mat-list-item [routerLink]="'dashboard'">
-        <div style="color: #fe1e24">Home</div>
+        <div class="text-white">Home</div>
       </a>
       <a mat-list-item [routerLink]="'repository'"
-        ><div style="color: #fe1e24">Repository</div></a
+        ><div class="text-white">Repository</div></a
       >
       <a mat-list-item [routerLink]="'finance'"
-        ><div style="color: #fe1e24">Finance</div></a
+        ><div class="text-white">Finance</div></a
       >
 
       <a mat-list-item [routerLink]="'academic'"
-        ><div style="color: #fe1e24">Academic</div></a
+        ><div class="text-white">Academic</div></a
       >
       <a mat-list-item [routerLink]="'timetable'"
-        ><div style="color: #fe1e24">TimeTable</div></a
+        ><div class="text-white">TimeTable</div></a
       >
-      <a mat-list-item href="testing"
-        ><div style="color: #fe1e24">testing</div></a
-      >
+      <a mat-list-item href="testing"><div class="text-white">testing</div></a>
       <a mat-list-item [routerLink]="'assistant'"
-        ><div style="color: #fe1e24">Assistant</div></a
+        ><div style="color: white">Assistant</div></a
       >
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
-    <mat-toolbar style="background-color: #f4484d">
+    <mat-toolbar class="bg-white clearfix">
       <div class="example-sidenav-content">
         <button type="button" mat-button (click)="drawer.toggle()">
           <mat-icon>menu</mat-icon>
         </button>
       </div>
       <span>{{ fname }}'s portal</span>
+      <div class="float-start">
+        <mat-icon>sun</mat-icon>
+        <!-- <mat-icon fontSet="fontIcons" fontIcon="fontIcon">font</mat-icon>
+        <mat-icon svgIcon="svgIcons:svgIcon"></mat-icon>
+        <mat-icon inline>ligature_icon</mat-icon>
+        <mat-icon fontIcon="ligature_icon_by_attribute"></mat-icon> -->
+      </div>
+
       <mat-menu #menu="matMenu">Laikipia University</mat-menu>
     </mat-toolbar>
     <!-- Add Content Here -->

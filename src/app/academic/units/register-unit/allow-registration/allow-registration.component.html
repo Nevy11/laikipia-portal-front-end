@@ -1,0 +1,18 @@
+<div class="clear-fix">
+  <div class="float-start">
+    <h3>Register units</h3>
+  </div>
+  <div class="float-end my-3">
+    <button class="text-white bg-success">register</button>
+  </div>
+</div>
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  <mat-text-column name="unitCode"></mat-text-column>
+  <mat-text-column name="UnitName"></mat-text-column>
+  <mat-text-column name="Option"></mat-text-column>
+  <mat-text-column name="Status"></mat-text-column>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+</table>

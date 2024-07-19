@@ -1,1 +1,26 @@
-<p>academic works!</p>
+<mat-tab-group>
+  <mat-tab label="units/curriculum">
+    <ng-template matTabContent>
+      Content 1 - Loaded: {{ getTimeLoaded(1) | date : "medium" }}
+      <div class="my-3">
+        <hinv-units></hinv-units>
+      </div>
+    </ng-template>
+  </mat-tab>
+  <mat-tab label="Exam Card">
+    <ng-template matTabContent>
+      Content 2 - Loaded: {{ getTimeLoaded(2) | date : "medium" }}
+      <div>
+        <hinv-exam-card></hinv-exam-card>
+      </div>
+    </ng-template>
+  </mat-tab>
+  <mat-tab label="Result slip">
+    <ng-template matTabContent>
+      Content 3 - Loaded: {{ getTimeLoaded(3) | date : "medium" }}
+      <div>
+        <hinv-result-slip></hinv-result-slip>
+      </div>
+    </ng-template>
+  </mat-tab>
+</mat-tab-group>

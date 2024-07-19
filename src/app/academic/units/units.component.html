@@ -1,0 +1,19 @@
+<!-- <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="start">
+  <mat-tab label="Unit Registration" [routerLink]="'unitHistory'"> </mat-tab>
+  <mat-tab label="Unit History">Content 2</mat-tab>
+  <mat-tab label="curriculum">Content 3</mat-tab>
+</mat-tab-group> -->
+
+<!-- <button [routerLink]="'unitHistory'">click here</button> -->
+<mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+  <mat-button-toggle value="bold" [routerLink]="'registerUnit'"
+    >Unit Registration</mat-button-toggle
+  >
+  <mat-button-toggle value="italic" [routerLink]="'unitHistory'"
+    >Unit History</mat-button-toggle
+  >
+  <mat-button-toggle value="underline" [routerLink]="'curriculum'"
+    >Curriculum</mat-button-toggle
+  >
+</mat-button-toggle-group>
+<router-outlet></router-outlet>
