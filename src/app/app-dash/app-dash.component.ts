@@ -4,7 +4,6 @@ import {
   ElementRef,
   OnInit,
   Renderer2,
-  ViewChild,
   inject,
 } from '@angular/core';
 import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
@@ -96,22 +95,22 @@ export class AppDashComponent implements OnInit, AfterViewInit {
           hostelBooking: true,
         },
         {
-          title: 'Finance',
-          cols: 1,
-          rows: 2,
-          content: 'this is a Stupid',
-          bufferValue: 30,
-          finance: true,
-          FeeBalance: this.feeBalance,
-          mobileDevice: false,
-        },
-        {
           title: 'Virtual Assistant',
           cols: 1,
           rows: 1,
           content: 'wooow',
           bufferValue: 30,
           virtualAssistant: true,
+        },
+        {
+          title: 'Finance',
+          cols: 2,
+          rows: 2,
+          content: 'this is a Stupid',
+          bufferValue: 30,
+          finance: true,
+          FeeBalance: this.feeBalance,
+          mobileDevice: false,
         },
       ];
     })

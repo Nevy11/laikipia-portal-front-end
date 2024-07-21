@@ -1,84 +1,93 @@
-<div>
-  <div class="my-3">
-    <strong>Fee Balance</strong>
+<div class="bg-primary text-white">
+  <div>
+    <div class="my-3">
+      <strong>Fee Balance</strong>
+    </div>
+    <div class="h3">
+      {{ FeeBalance }}
+    </div>
   </div>
-  <div class="h3">
-    {{ FeeBalance }}
-  </div>
+  <mat-accordion class="bg-primary text-white">
+    <mat-expansion-panel hideToggle class="bg-primary text-white my-5">
+      <mat-expansion-panel-header class="bg-primary text-white">
+        <mat-panel-title class="text-white"> Mpesa </mat-panel-title>
+        <mat-panel-description> pay your Fees via mpesa </mat-panel-description>
+      </mat-expansion-panel-header>
+      <p>using paybill number</p>
+      <div class="clearfix">
+        <div class="float-end">
+          <button
+            mat-raised-button
+            class="btn bg-dark text-white"
+            (click)="payNow()"
+          >
+            pay
+          </button>
+        </div>
+      </div>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel hideToggle class="bg-primary text-white my-5">
+      <mat-expansion-panel-header class="bg-primary text-white">
+        <mat-panel-title class="text-white"> Equity </mat-panel-title>
+        <mat-panel-description>
+          pay your Fees via Equity
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <p>using equity banking app</p>
+      <div class="clearfix">
+        <div class="float-end">
+          <button
+            mat-raised-button
+            class="btn bg-dark text-white"
+            (click)="payNow()"
+          >
+            pay
+          </button>
+        </div>
+      </div>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel hideToggle class="bg-primary text-white my-5">
+      <mat-expansion-panel-header class="bg-primary text-white">
+        <mat-panel-title class="text-white"> Kcb </mat-panel-title>
+        <mat-panel-description> pay your Fees via Kcb </mat-panel-description>
+      </mat-expansion-panel-header>
+      <p>using kcb bank account number</p>
+      <div class="clearfix">
+        <div class="float-end">
+          <button
+            mat-raised-button
+            class="btn bg-dark text-white"
+            (click)="payNow()"
+          >
+            pay
+          </button>
+        </div>
+      </div>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel hideToggle class="bg-primary text-white my-5">
+      <mat-expansion-panel-header class="bg-primary text-white">
+        <mat-panel-title class="text-white"> Co-op bank </mat-panel-title>
+        <mat-panel-description>
+          pay your Fees via Co-Operative bank
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <p>co-op bank account</p>
+      <div class="clearfix">
+        <div class="float-end">
+          <button
+            mat-raised-button
+            class="btn bg-dark text-white"
+            (click)="payNow()"
+          >
+            pay
+          </button>
+        </div>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+
+  <!-- <div class="my-3 h6">Go to finance</div> -->
 </div>
-<mat-accordion>
-  <mat-expansion-panel hideToggle class="bg-primary text-white my-5">
-    <mat-expansion-panel-header>
-      <mat-panel-title class="text-white"> Mpesa </mat-panel-title>
-      <mat-panel-description> pay your Fees via mpesa </mat-panel-description>
-    </mat-expansion-panel-header>
-    <p>using paybill number</p>
-    <div class="clearfix">
-      <div class="float-end">
-        <button
-          mat-raised-button
-          class="btn bg-dark text-white"
-          (click)="payNow()"
-        >
-          pay
-        </button>
-      </div>
-    </div>
-  </mat-expansion-panel>
-
-  <mat-expansion-panel hideToggle class="bg-primary text-white my-5">
-    <mat-expansion-panel-header>
-      <mat-panel-title class="text-white"> Equity </mat-panel-title>
-    </mat-expansion-panel-header>
-    <p>using equity banking app</p>
-    <div class="clearfix">
-      <div class="float-end">
-        <button
-          mat-raised-button
-          class="btn bg-dark text-white"
-          (click)="payNow()"
-        >
-          pay
-        </button>
-      </div>
-    </div>
-  </mat-expansion-panel>
-
-  <mat-expansion-panel hideToggle class="bg-primary text-white my-5">
-    <mat-expansion-panel-header>
-      <mat-panel-title class="text-white"> Kcb </mat-panel-title>
-    </mat-expansion-panel-header>
-    <p>using kcb bank account number</p>
-    <div class="clearfix">
-      <div class="float-end">
-        <button
-          mat-raised-button
-          class="btn bg-dark text-white"
-          (click)="payNow()"
-        >
-          pay
-        </button>
-      </div>
-    </div>
-  </mat-expansion-panel>
-
-  <mat-expansion-panel hideToggle class="bg-primary text-white my-5">
-    <mat-expansion-panel-header>
-      <mat-panel-title class="text-white"> Co-op bank </mat-panel-title>
-    </mat-expansion-panel-header>
-    <p>co-op bank account</p>
-    <div class="clearfix">
-      <div class="float-end">
-        <button
-          mat-raised-button
-          class="btn bg-dark text-white"
-          (click)="payNow()"
-        >
-          pay
-        </button>
-      </div>
-    </div>
-  </mat-expansion-panel>
-</mat-accordion>
-
-<div class="my-3 h6">Go to finance</div>

@@ -1,0 +1,8 @@
+<div class="my-3 h2" style="text-align: center">Events</div>
+<div *ngFor="let event of events">
+  <div class="mx-5">
+    <div>{{ event.Title }}</div>
+    <div>{{ event.date }}</div>
+    <div class="mx-5"><a href="{{ event.link }}">Read More</a></div>
+  </div>
+</div>

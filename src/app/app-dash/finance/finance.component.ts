@@ -12,6 +12,7 @@ import { AppNavComponent } from '../../app-nav/app-nav.component';
 import { HostelsComponent } from '../hostels/hostels.component';
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { FinanceService } from './finance.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'hinv-finance',
@@ -20,7 +21,7 @@ import { FinanceService } from './finance.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FinanceComponent implements OnInit {
-  // constructor(private financeService: FinanceService) {}
+  constructor(private router: Router) {}
   @Input() FeeBalance!: number;
   panelOpenState = signal(false);
   dialog = inject(MatDialog);
@@ -35,5 +36,8 @@ export class FinanceComponent implements OnInit {
   // });
   openDialog() {
     this.dialog.open(AppFinanceMpesaComponent);
+  }
+  goToFeeStatement() {
+    this.router.navigate(['finance', 'feeStructure']);
   }
 }
