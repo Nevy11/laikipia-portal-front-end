@@ -2,7 +2,10 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TestingRoutingModule } from './testing-routing.module';
 import { TestingComponent } from './testing.component';
-import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import {
+  provideHttpClient,
+  withInterceptorsFromDi,
+} from '@angular/common/http';
 import { TestingService } from './testing.service';
 import { RouterLink } from '@angular/router';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -15,18 +18,28 @@ import { TestingNavigationComponent } from './testing-navigation/testing-navigat
 import { MatExpansionModule } from '@angular/material/expansion';
 import { CdkAccordionModule } from '@angular/cdk/accordion';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
-@NgModule({ declarations: [TestingComponent, TestingNavigationComponent],
-    exports: [TestingComponent], imports: [CommonModule,
-        TestingRoutingModule,
-        RouterLink,
-        MatToolbarModule,
-        MatIconModule,
-        MatSidenavModule,
-        FormsModule,
-        MatButtonModule,
-        MatCheckboxModule,
-        MatExpansionModule,
-        CdkAccordionModule,
-        MatGridListModule], providers: [TestingService, provideHttpClient(withInterceptorsFromDi())] })
+@NgModule({
+  declarations: [TestingComponent, TestingNavigationComponent],
+  exports: [TestingComponent],
+  imports: [
+    CommonModule,
+    TestingRoutingModule,
+    RouterLink,
+    MatToolbarModule,
+    MatIconModule,
+    MatSidenavModule,
+    FormsModule,
+    MatButtonModule,
+    MatCheckboxModule,
+    MatExpansionModule,
+    CdkAccordionModule,
+    MatGridListModule,
+    MatFormFieldModule,
+    MatInputModule,
+  ],
+  providers: [TestingService, provideHttpClient(withInterceptorsFromDi())],
+})
 export class TestingModule {}

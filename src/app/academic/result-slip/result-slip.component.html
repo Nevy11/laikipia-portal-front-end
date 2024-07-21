@@ -1,1 +1,95 @@
-<p>result-slip works!</p>
+<div *ngIf="currentYear === 1">
+  <form (ngSubmit)="Generate()">
+    <mat-form-field>
+      <mat-label>Choose the year </mat-label>
+      <mat-select [(ngModel)]="year" name="year">
+        <mat-option value="1">Year 1</mat-option>
+        <mat-option value="2" disabled>Year 2</mat-option>
+        <mat-option value="3" disabled>Year 3</mat-option>
+        <mat-option value="4" disabled>Year 4</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Choose an option</mat-label>
+      <mat-select [(ngModel)]="sem" name="sem">
+        <mat-option value="1">Semister 1</mat-option>
+        <mat-option value="2">Semister 2</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <button mat-button type="submit" class="btn bg-danger text-white">
+      Generate
+    </button>
+  </form>
+</div>
+
+<div *ngIf="currentYear === 2">
+  <form (ngSubmit)="Generate()">
+    <mat-form-field>
+      <mat-label>Choose the year </mat-label>
+      <mat-select [(ngModel)]="year" name="year">
+        <mat-option value="1">Year 1</mat-option>
+        <mat-option value="2">Year 2</mat-option>
+        <mat-option value="3" disabled>Year 3</mat-option>
+        <mat-option value="4" disabled>Year 4</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Choose an option</mat-label>
+      <mat-select [(ngModel)]="sem" name="sem">
+        <mat-option value="1">Semister 1</mat-option>
+        <mat-option value="2">Semister 2</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <button mat-button type="submit" class="btn bg-danger text-white">
+      Generate
+    </button>
+  </form>
+</div>
+
+<div *ngIf="currentYear === 3">
+  <form (ngSubmit)="Generate()">
+    <mat-form-field>
+      <mat-label>Choose the year </mat-label>
+      <mat-select [(ngModel)]="year" name="year">
+        <mat-option value="1">Year 1</mat-option>
+        <mat-option value="2">Year 2</mat-option>
+        <mat-option value="3">Year 3</mat-option>
+        <mat-option value="4" disabled>Year 4</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Choose an option</mat-label>
+      <mat-select [(ngModel)]="sem" name="sem">
+        <mat-option value="1">Semister 1</mat-option>
+        <mat-option value="2">Semister 2</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <button mat-button type="submit" class="btn bg-danger text-white">
+      Generate
+    </button>
+  </form>
+</div>
+
+<div *ngIf="currentYear === 4">
+  <form (ngSubmit)="Generate()">
+    <mat-form-field>
+      <mat-label>Choose the year </mat-label>
+      <mat-select [(ngModel)]="year" name="year">
+        <mat-option value="1">Year 1</mat-option>
+        <mat-option value="2">Year 2</mat-option>
+        <mat-option value="3">Year 3</mat-option>
+        <mat-option value="4">Year 4</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Choose an option</mat-label>
+      <mat-select [(ngModel)]="sem" name="sem">
+        <mat-option value="1">Semister 1</mat-option>
+        <mat-option value="2">Semister 2</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <button mat-button type="submit" class="btn bg-danger text-white">
+      Generate
+    </button>
+  </form>
+</div>

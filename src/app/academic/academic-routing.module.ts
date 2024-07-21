@@ -30,6 +30,7 @@ const routes: Routes = [
       },
     ],
   },
+  { path: 'slip', loadChildren: () => import('./result-slip/slip/slip.module').then(m => m.SlipModule) },
 ];
 
 @NgModule({

@@ -3,10 +3,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppDashComponent } from './app-dash/app-dash.component';
 import { AppRepositoryComponent } from './app-repository/app-repository.component';
 import { AppTimetableComponent } from './app-timetable/app-timetable.component';
-import { TestingComponent } from './testing/testing.component';
-import { TestingGuard } from './testing/guards/testing.guard';
 
 const routes: Routes = [
+  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   {
     path: 'dashboard',
     component: AppDashComponent,
@@ -25,7 +24,6 @@ const routes: Routes = [
     component: AppTimetableComponent,
   },
 
-  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   {
     path: 'finance',
     loadChildren: () =>
@@ -40,6 +38,28 @@ const routes: Routes = [
     path: 'assistant',
     loadChildren: () =>
       import('./assistant/assistant.module').then((m) => m.AssistantModule),
+  },
+  {
+    path: 'socials',
+    loadChildren: () =>
+      import('./socials/socials.module').then((m) => m.SocialsModule),
+  },
+  {
+    path: 'message',
+    loadChildren: () =>
+      import('./message/message.module').then((m) => m.MessageModule),
+  },
+  {
+    path: 'admission',
+    loadChildren: () =>
+      import('./admission/admission.module').then((m) => m.AdmissionModule),
+  },
+  {
+    path: 'evaluations',
+    loadChildren: () =>
+      import('./evaluations/evaluations.module').then(
+        (m) => m.EvaluationsModule
+      ),
   },
 
   {

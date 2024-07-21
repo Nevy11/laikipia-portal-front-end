@@ -26,7 +26,4 @@ export class AppFinanceMpesaComponent implements OnInit {
   ngOnInit(): void {
     // this.auth.subscribe((data) => console.log(data));
   }
-  learn$ = this.http.get<any>('http://localhost:3000/').subscribe((resp) => {
-    console.log(resp);
-  });
 }

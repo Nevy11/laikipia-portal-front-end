@@ -27,7 +27,7 @@ export class FinanceComponent implements OnInit {
   BreakPointObserver = inject(BreakpointObserver);
   name = 'Stephen Mainda';
   ngOnInit(): void {
-    console.log(this.BreakPointObserver);
+    // console.log(this.BreakPointObserver);
     // console.log(this.financeService.joke$);
   }
   // joke$ = this.financeService.joke$.subscribe((data) => {

@@ -13,6 +13,18 @@
       <a mat-list-item [routerLink]="'dashboard'">
         <div class="text-white">Home</div>
       </a>
+      <a mat-list-item [routerLink]="'socials'">
+        <div class="text-white">Socials</div>
+      </a>
+      <a mat-list-item [routerLink]="'message'">
+        <div class="text-white">Message</div>
+      </a>
+      <a mat-list-item [routerLink]="'admission'">
+        <div class="text-white">Admission</div>
+      </a>
+      <a mat-list-item [routerLink]="'academic'"
+        ><div class="text-white">Academic</div></a
+      >
       <a mat-list-item [routerLink]="'repository'"
         ><div class="text-white">Repository</div></a
       >
@@ -20,11 +32,11 @@
         ><div class="text-white">Finance</div></a
       >
 
-      <a mat-list-item [routerLink]="'academic'"
-        ><div class="text-white">Academic</div></a
-      >
       <a mat-list-item [routerLink]="'timetable'"
         ><div class="text-white">TimeTable</div></a
+      >
+      <a mat-list-item [routerLink]="'evaluations'"
+        ><div class="text-white">Evaluations</div></a
       >
       <a mat-list-item href="testing"><div class="text-white">testing</div></a>
       <a mat-list-item [routerLink]="'assistant'"
@@ -33,7 +45,7 @@
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
-    <mat-toolbar class="bg-white clearfix">
+    <mat-toolbar color="primary">
       <div class="example-sidenav-content">
         <button type="button" mat-button (click)="drawer.toggle()">
           <mat-icon>menu</mat-icon>

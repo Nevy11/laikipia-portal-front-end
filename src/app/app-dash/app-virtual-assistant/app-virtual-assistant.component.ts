@@ -10,11 +10,10 @@ import { AppTimetableComponent } from '../../app-timetable/app-timetable.compone
 export class AppVirtualAssistantComponent implements OnInit {
   @ViewChild('name', { static: true }) name!: ElementRef;
   ngOnInit(): void {
-    if (this.name.nativeElement) {
-      this.name.nativeElement.innerText = 'HiltonHotel';
-    }
-
-    console.log('Stephen');
-    console.log(this.name);
+    // if (this.name.nativeElement) {
+    //   this.name.nativeElement.innerText = 'HiltonHotel';
+    // }
+    // console.log('Stephen');
+    // console.log(this.name);
   }
 }

@@ -1,19 +1,14 @@
 import {
+  AfterViewInit,
   ChangeDetectionStrategy,
   Component,
-  ContentChild,
   ElementRef,
+  OnDestroy,
   OnInit,
   ViewChild,
-  ViewContainerRef,
   ViewEncapsulation,
-  signal,
 } from '@angular/core';
-import { AppTimetableComponent } from '../app-timetable/app-timetable.component';
-import { FinanceComponent } from '../app-dash/finance/finance.component';
-import { TestingService } from './testing.service';
-import { pluck, shareReplay } from 'rxjs';
-import { ActivatedRoute } from '@angular/router';
+import { AutofillMonitor } from '@angular/cdk/text-field';
 
 @Component({
   selector: 'hinv-testing',
@@ -22,61 +17,29 @@ import { ActivatedRoute } from '@angular/router';
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
 })
-export class TestingComponent implements OnInit {
-  // name = 'Hannetsiagas';
-  timetable = this.vcr.createComponent(AppTimetableComponent);
-  toggleValue: boolean = true;
-  allRooms!: any;
-  // data$ = this.testingService.getAllRooms();
-  data$ = this.activatedRoute.data.pipe(pluck('rooms'), shareReplay(1));
+export class TestingComponent implements OnInit, AfterViewInit, OnDestroy {
+  @ViewChild('first', { read: ElementRef }) firstName!: ElementRef<HTMLElement>;
+  @ViewChild('last', { read: ElementRef }) lastName!: ElementRef<HTMLElement>;
 
-  cats$ = this.testingService.cats$;
-  jokes$ = this.testingService.jokes$;
-
-  addRoom$ = this.testingService.addRoom().subscribe;
-  updateRoom$ = this.testingService.updateRoom('3').subscribe;
-  // .pipe(filter((resp) => resp instanceof HttpResponse))
-  // .subscribe();
-  getRoom$ = this.testingService.getRoom('3').subscribe((resp) => {
-    // console.log(resp);
-  });
-  deleteRoom$ = this.testingService.deleteRoom('1').subscribe;
-  @ViewChild('jina', { static: true }) jina!: ElementRef;
-  @ViewChild('age', { static: true }) age!: ElementRef;
-  @ViewChild('name', { static: true }) name!: ElementRef;
-  // @ViewChild(AppTimetableComponent, { static: true })
-  // timetable!: ViewContainerRef;
-  @ContentChild(FinanceComponent) financeComponent!: FinanceComponent;
-  constructor(
-    private vcr: ViewContainerRef,
-    private testingService: TestingService,
-    private activatedRoute: ActivatedRoute
-  ) {}
-  ngOnInit(): void {
-    if (this.financeComponent) {
-      this.financeComponent.name = 'Stephen';
-    }
-    this.activatedRoute.data.subscribe((resp) => {
-      console.log(resp['rooms']['2']);
+  firstNameAutofilled!: boolean;
+  lastNameAutofilled!: boolean;
+  fName: string = '';
+  lName: string = '';
+  constructor(private _autofill: AutofillMonitor) {}
+  ngOnInit(): void {}
+  ngAfterViewInit(): void {
+    this._autofill.monitor(this.firstName).subscribe((e) => {
+      this.firstNameAutofilled = e.isAutofilled;
     });
-    this.jina.nativeElement.innerText = 'Hilton Hotel';
-    this.name.nativeElement.innerText = 'Hannetsiagas';
-    this.age.nativeElement.innerText = 23;
+    this._autofill.monitor(this.lastName).subscribe((e) => {
+      this.lastNameAutofilled = e.isAutofilled;
+    });
   }
-  toggle() {
-    console.log('pressed');
-    return this.testingService.updateRoom('3').subscribe();
+  ngOnDestroy(): void {
+    this._autofill.stopMonitoring(this.firstName);
+    this._autofill.stopMonitoring(this.lastName);
   }
-
-  events: string[] = ['TestingNavigationComponent'];
-  opened!: boolean;
-
-  // shouldRun = /(^|.)(stackblitz|webcontainer).(io|com)$/.test(
-  // window.location.host
-  // );
-  showFiller = false;
-  readonly panelOpenState = signal(false);
-
-  items = ['First Year', 'Second Year', 'Third Year', 'Forth Year'];
-  expandedIndex = 0;
+  generate() {
+    console.log();
+  }
 }

@@ -55,21 +55,21 @@ export class AppDashComponent implements OnInit, AfterViewInit {
             hostelBooking: true,
           },
           {
-            title: 'Finance',
-            cols: 1,
-            rows: 2,
-            bufferValue: 10,
-            finance: true,
-            FeeBalance: this.feeBalance,
-            mobileDevice: true,
-          },
-          {
             title: 'Assistant',
             cols: 1,
             rows: 1,
             content: 'Eeeuuu',
             bufferValue: 10,
             virtualAssistant: true,
+          },
+          {
+            title: 'Finance',
+            cols: 2,
+            rows: 2,
+            bufferValue: 10,
+            finance: true,
+            FeeBalance: this.feeBalance,
+            mobileDevice: true,
           },
         ];
       }
@@ -116,7 +116,8 @@ export class AppDashComponent implements OnInit, AfterViewInit {
       ];
     })
   );
-  ngOnInit(): void {
+  ngOnInit(): void {}
+  ngAfterViewInit(): void {
     const element =
       this.elementRef.nativeElement.querySelector('.progress-bar');
     this.render.setStyle(element, 'width', `${this.progressValue.toString()}%`);
@@ -125,5 +126,4 @@ export class AppDashComponent implements OnInit, AfterViewInit {
     this.render.setStyle(progress_bar, 'background-color', 'gray');
     this.render.setStyle(progress_bar, 'color', 'white');
   }
-  ngAfterViewInit(): void {}
 }

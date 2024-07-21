@@ -13,13 +13,6 @@ import { TestingService } from '../testing.service';
 @Injectable({
   providedIn: 'root',
 })
-export class TestingGuard implements Resolve<Rooms[]> {
+export class TestingGuard {
   constructor(private testingService: TestingService) {}
-
-  resolve(
-    route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot
-  ): MaybeAsync<Rooms[]> {
-    return this.testingService.getAllRooms();
-  }
 }
