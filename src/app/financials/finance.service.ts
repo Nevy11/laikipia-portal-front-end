@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Finance } from './finance';
-import { AppRepositoryService } from '../app-repository/app-repository.service';
+import { AppRepositoryService } from '../repository/app-repository.service';
 
 @Injectable({
   providedIn: 'root',

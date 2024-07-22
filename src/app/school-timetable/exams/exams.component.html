@@ -1,0 +1,61 @@
+<div
+  class="h3 my-3 text-danger"
+  style="
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+      'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  "
+>
+  Exam Timetable
+</div>
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+  <!-- Position Column -->
+  <ng-container matColumnDef="day">
+    <th mat-header-cell *matHeaderCellDef></th>
+    <td mat-cell *matCellDef="let element" class="text-danger">
+      {{ element.day }}
+    </td>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="earlyMorning">
+    <th mat-header-cell *matHeaderCellDef>
+      <div>
+        <div style="align-items: center">08:30</div>
+        <div style="align-items: center">10:30</div>
+      </div>
+    </th>
+    <td mat-cell *matCellDef="let element">{{ element.earlyMorning }}</td>
+  </ng-container>
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="midMorning">
+    <th mat-header-cell *matHeaderCellDef>
+      <div>
+        <div style="align-items: center">11:30</div>
+        <div style="align-items: center">01:30</div>
+      </div>
+    </th>
+    <td mat-cell *matCellDef="let element">{{ element.midMorning }}</td>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="afterlunch">
+    <th mat-header-cell *matHeaderCellDef>
+      <div>
+        <div style="align-items: center">02:30</div>
+        <div style="align-items: center">04:30</div>
+      </div>
+    </th>
+    <td mat-cell *matCellDef="let element">{{ element.afterlunch }}</td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="columns"></tr>
+  <tr mat-row *matRowDef="let row; columns: columns"></tr>
+</table>
+<!-- earlyMorning: string;
+//   midMorning: string;
+//   afterlunch: string; -->

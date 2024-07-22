@@ -1,0 +1,15 @@
+<section>
+  <mat-button-toggle-group [(ngModel)]="yourChoice" aria-label="Font Style">
+    <mat-button-toggle value="evaluation">Evaluation</mat-button-toggle>
+    <mat-button-toggle value="evaluationHistory"
+      >Evaluation History</mat-button-toggle
+    >
+  </mat-button-toggle-group>
+</section>
+
+<div *ngIf="yourChoice === 'evaluation'">
+  <hinv-evaluation-table></hinv-evaluation-table>
+</div>
+<div *ngIf="yourChoice === 'evaluationHistory'">
+  <hinv-history-evaluations></hinv-history-evaluations>
+</div>

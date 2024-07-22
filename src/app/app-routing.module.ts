@@ -1,27 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AppDashComponent } from './app-dash/app-dash.component';
-import { AppRepositoryComponent } from './app-repository/app-repository.component';
-import { AppTimetableComponent } from './app-timetable/app-timetable.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   {
-    path: 'dashboard',
-    component: AppDashComponent,
+    path: '',
+    loadChildren: () =>
+      import('./login/login.module').then((m) => m.LoginModule),
   },
+
   {
     path: 'testing',
     loadChildren: () =>
       import('./testing/testing.module').then((m) => m.TestingModule),
-  },
-  {
-    path: 'repository',
-    component: AppRepositoryComponent,
-  },
-  {
-    path: 'timetable',
-    component: AppTimetableComponent,
   },
 
   {
@@ -61,6 +51,34 @@ const routes: Routes = [
         (m) => m.EvaluationsModule
       ),
   },
+  {
+    path: 'schoolTimetable',
+    loadChildren: () =>
+      import('./school-timetable/school-timetable.module').then(
+        (m) => m.SchoolTimetableModule
+      ),
+  },
+  {
+    path: 'dashboard',
+    loadChildren: () =>
+      import('./dashboard/dashboard.module').then((m) => m.DashboardModule),
+  },
+  {
+    path: 'repository',
+    loadChildren: () =>
+      import('./repository/repository.module').then((m) => m.RepositoryModule),
+  },
+  {
+    path: 'navigation',
+    loadChildren: () =>
+      import('./navigation/navigation.module').then((m) => m.NavigationModule),
+  },
+  {
+    path: 'timetable',
+    loadChildren: () =>
+      import('./timetable/timetable.module').then((m) => m.TimetableModule),
+  },
+  { path: 'dragNdrop', loadChildren: () => import('./drag-ndrop/drag-ndrop.module').then(m => m.DragNdropModule) },
 
   {
     path: '**',

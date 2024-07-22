@@ -1,10 +1,19 @@
-import { Component } from '@angular/core';
+import {
+  AfterContentInit,
+  Component,
+  ViewContainerRef,
+  inject,
+} from '@angular/core';
+import { DragNdropComponent } from '../drag-ndrop/drag-ndrop.component';
 
 @Component({
   selector: 'hinv-message',
   templateUrl: './message.component.html',
-  styleUrl: './message.component.scss'
+  styleUrl: './message.component.scss',
 })
-export class MessageComponent {
-
+export class MessageComponent implements AfterContentInit {
+  vcr = inject(ViewContainerRef);
+  ngAfterContentInit(): void {
+    this.vcr.createComponent(DragNdropComponent);
+  }
 }

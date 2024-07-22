@@ -5,7 +5,7 @@ import { TestingGuard } from './guards/testing.guard';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'testing',
     component: TestingComponent,
   },
 ];
