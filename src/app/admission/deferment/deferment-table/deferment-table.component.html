@@ -1,0 +1,10 @@
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8 my-5">
+  <mat-text-column name="index"></mat-text-column>
+  <mat-text-column name="notes"></mat-text-column>
+  <mat-text-column name="reasons"></mat-text-column>
+  <mat-text-column name="hodApproval"></mat-text-column>
+  <mat-text-column name="registrarApproval"></mat-text-column>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+</table>

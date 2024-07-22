@@ -1,0 +1,18 @@
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8 mt-3">
+  <mat-text-column name="room"></mat-text-column>
+  <mat-text-column name="term"></mat-text-column>
+  <mat-text-column name="date"></mat-text-column>
+  <mat-text-column name="hostel"></mat-text-column>
+  <mat-text-column name="status"></mat-text-column>
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+</table>
+<div *ngIf="lDataSource === 0">
+  <div style="text-align: center">
+    <mat-icon
+      aria-hidden="false"
+      aria-label="Example home icon"
+      fontIcon="home"
+    ></mat-icon>
+  </div>
+</div>

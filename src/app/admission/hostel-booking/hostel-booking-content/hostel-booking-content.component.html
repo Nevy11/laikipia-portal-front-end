@@ -1,0 +1,15 @@
+<mat-button-toggle-group
+  name="fontStyle"
+  aria-label="Font Style"
+  [(ngModel)]="choice"
+>
+  <mat-button-toggle value="bookHostel">Book Hostel</mat-button-toggle>
+  <mat-button-toggle value="history">History</mat-button-toggle>
+</mat-button-toggle-group>
+
+<div *ngIf="choice === 'bookHostel'">
+  <hinv-book-now></hinv-book-now>
+</div>
+<div *ngIf="choice === 'history'">
+  <hinv-history-book></hinv-history-book>
+</div>
