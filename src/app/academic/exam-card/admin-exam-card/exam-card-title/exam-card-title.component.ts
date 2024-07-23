@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ExamCardService } from '../../exam-card.service';
 
 @Component({
   selector: 'hinv-exam-card-title',
@@ -6,9 +7,10 @@ import { Component } from '@angular/core';
   styleUrl: './exam-card-title.component.scss',
 })
 export class ExamCardTitleComponent {
-  schoolName: string = 'LAIKIPIA UNIVERSITY';
-  pOBox: string = 'P.O. BOX 1100 – 20300 NYAHURURU, KENYA,';
-  cell: string = '+254(0)729281902,+254(0)729285 902';
-  email: string = 'info@laikipia.ac.ke web: www.laikipia.ac.ke';
-  Tel: string = '+254(0)20 267 1779/1';
+  schoolName: string = this.examService.schoolName;
+  pOBox: string = this.examService.pOBox;
+  cell: string = this.examService.cell;
+  email: string = this.examService.email;
+  Tel: string = this.examService.Tel;
+  constructor(private examService: ExamCardService) {}
 }

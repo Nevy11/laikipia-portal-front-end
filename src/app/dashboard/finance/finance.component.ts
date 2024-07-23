@@ -3,6 +3,7 @@ import { Component, Input, inject, signal } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { AppFinanceMpesaComponent } from './app-finance-mpesa/app-finance-mpesa.component';
+import { DashboardService } from '../dashboard.service';
 
 @Component({
   selector: 'hinv-finance',
@@ -10,12 +11,12 @@ import { AppFinanceMpesaComponent } from './app-finance-mpesa/app-finance-mpesa.
   styleUrl: './finance.component.scss',
 })
 export class FinanceComponent {
-  constructor(private router: Router) {}
+  constructor(private router: Router, private dashService: DashboardService) {}
   @Input() FeeBalance!: number;
   panelOpenState = signal(false);
   dialog = inject(MatDialog);
   BreakPointObserver = inject(BreakpointObserver);
-  name = 'Stephen Mainda';
+  name = this.dashService.studentName;
 
   openDialog() {
     this.dialog.open(AppFinanceMpesaComponent);

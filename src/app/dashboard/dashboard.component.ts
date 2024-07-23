@@ -1,6 +1,8 @@
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Component, ElementRef, Renderer2, inject } from '@angular/core';
+import { Router } from '@angular/router';
 import { map } from 'rxjs';
+import { DashboardService } from './dashboard.service';
 
 @Component({
   selector: 'hinv-dashboard',
@@ -9,16 +11,25 @@ import { map } from 'rxjs';
 })
 export class DashboardComponent {
   private breakpointObserver = inject(BreakpointObserver);
-  studentName: string = 'Stephen Mainda';
-  phoneStudentName: string = 'Stephen';
-  regNo: string = 'SC/COM/0032/22';
-  year: number = 2;
-  sem: number = 3;
-  feeBalance: number = 16500;
-  progressValue: number = 70;
-  course: string = 'Bachelor of science(Computer Science';
 
-  constructor(private render: Renderer2, private elementRef: ElementRef) {}
+  firstName: string = this.dashService.studentFirstName;
+  middleName: string = this.dashService.studentMiddleName;
+  studentName: string = this.firstName.concat(this.middleName);
+  lastName: string = this.dashService.studentLastName;
+  // studentFirstName: string = this.dashService.studentFirstName;
+  regNo: string = this.dashService.regNo;
+  year: number = this.dashService.year;
+  sem: number = this.dashService.sem;
+  feeBalance: number = this.dashService.feeBalance;
+  progressValue: number = this.dashService.progressValue;
+  course: string = this.dashService.course;
+  mychoice!: string;
+  constructor(
+    private render: Renderer2,
+    private elementRef: ElementRef,
+    private router: Router,
+    private dashService: DashboardService
+  ) {}
 
   /** Based on the screen size, switch from standard to one column per row */
   cards = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
@@ -26,7 +37,7 @@ export class DashboardComponent {
       if (matches) {
         return [
           {
-            title: this.phoneStudentName,
+            title: this.studentName,
             cols: 2,
             rows: 1,
             // content: `Reg No: ${this.regNo} \n Year: ${this.year} semister ${this.sem}`,
@@ -34,7 +45,8 @@ export class DashboardComponent {
             year: this.year,
             sem: this.sem,
             studentInfo: true,
-            course: 'Bachelor of Science(ComputerScience)',
+            programme: this.dashService.programme,
+            course: this.dashService.course,
             bufferValue: 10,
           },
           {
@@ -69,6 +81,8 @@ export class DashboardComponent {
       return [
         {
           title: this.studentName,
+          firstName: this.firstName,
+          lastName: this.lastName,
           cols: 2,
           rows: 1,
           // content: `Reg No: ${this.regNo} \n Year: ${this.year}, ${this.sem}`,
@@ -76,7 +90,8 @@ export class DashboardComponent {
           year: this.year,
           sem: this.sem,
           studentInfo: true,
-          course: 'Bachelor of Science( Computer Science )',
+          programme: this.dashService.programme,
+          course: this.dashService.course,
           bufferValue: 30,
         },
         {
@@ -108,6 +123,7 @@ export class DashboardComponent {
       ];
     })
   );
+
   ngOnInit(): void {}
   ngAfterViewChecked(): void {
     const element =
@@ -117,5 +133,24 @@ export class DashboardComponent {
       this.elementRef.nativeElement.querySelector('.progress-bar');
     this.render.setStyle(progress_bar, 'background-color', 'gray');
     this.render.setStyle(progress_bar, 'color', 'white');
+  }
+  toFeeStructure() {
+    this.router.navigateByUrl('finance');
+  }
+  toFeeStatement() {
+    this.router.navigate(['finance', 'feeStructure']);
+  }
+  toEvaluation() {
+    this.router.navigateByUrl('evaluations');
+  }
+  toRepository() {
+    this.router.navigateByUrl('repository');
+  }
+  hostel(choice: string) {
+    if (choice === 'bookHostel') {
+      this.mychoice = 'bookHostel';
+    } else {
+      this.mychoice = 'history';
+    }
   }
 }

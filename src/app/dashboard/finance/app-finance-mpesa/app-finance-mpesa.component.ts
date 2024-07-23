@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { DashboardService } from '../../dashboard.service';
 
 @Component({
   selector: 'hinv-app-finance-mpesa',
@@ -7,7 +8,7 @@ import { Component } from '@angular/core';
   styleUrl: './app-finance-mpesa.component.scss',
 })
 export class AppFinanceMpesaComponent {
-  balance: number = 0;
+  balance: number = this.dashService.feeBalance;
   // auth = this.appFinanceService.getAuthentication();
   checkBalance() {
     this.balance = 5000;
@@ -15,5 +16,8 @@ export class AppFinanceMpesaComponent {
   mpesaOk() {
     this.balance += 200;
   }
-  constructor(private http: HttpClient) {}
+  constructor(
+    private http: HttpClient,
+    private dashService: DashboardService
+  ) {}
 }

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ExamCardService } from '../../exam-card.service';
 
 @Component({
   selector: 'hinv-student-info-exam-card',
@@ -6,10 +7,11 @@ import { Component } from '@angular/core';
   styleUrl: './student-info-exam-card.component.scss',
 })
 export class StudentInfoExamCardComponent {
-  studentName: string = 'Stephen Mainda Mongare';
-  programme: string = 'BACHELOR OF SCIENCE (COMPUTER SCIENCE)';
-  session: string = 'HOLIDAY';
-  regNo: string = 'SC/COM/0032/22';
-  class: string = 'COMP/MC/FT/OCT/2022';
-  SerialNo: string = '0494225090';
+  studentName: string = this.examService.officialStudentName;
+  programme: string = this.examService.officialProgramme;
+  session: string = this.examService.officialSession;
+  regNo: string = this.examService.officialRegNo;
+  class: string = this.examService.officialClass;
+  SerialNo: string = this.examService.officialSerialNo;
+  constructor(private examService: ExamCardService) {}
 }

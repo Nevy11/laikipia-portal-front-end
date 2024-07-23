@@ -14,6 +14,8 @@ import { CdkAccordionModule } from '@angular/cdk/accordion';
 import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
+import { BookNowDashboardComponent } from './hostels/book-now-dashboard/book-now-dashboard.component';
+import { HistoryBookHostelsComponent } from './hostels/history-book-hostels/history-book-hostels.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,8 @@ import { MatIconModule } from '@angular/material/icon';
     AppFinanceMpesaComponent,
     HostelsComponent,
     AppVirtualAssistantComponent,
+    BookNowDashboardComponent,
+    HistoryBookHostelsComponent,
   ],
   imports: [
     CommonModule,

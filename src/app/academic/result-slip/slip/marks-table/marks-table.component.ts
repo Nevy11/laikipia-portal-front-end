@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { ResultSlipService } from '../../result-slip.service';
+import { AcademicService } from '../../../academic.service';
 
 @Component({
   selector: 'hinv-marks-table',
@@ -7,7 +7,7 @@ import { ResultSlipService } from '../../result-slip.service';
   styleUrl: './marks-table.component.scss',
 })
 export class MarksTableComponent {
-  slipService = inject(ResultSlipService);
+  slipService = inject(AcademicService);
   displayedColumns: string[] = ['unitCode', 'unitName', 'hours', 'Grade'];
   dataSource = this.slipService.Marks;
 }

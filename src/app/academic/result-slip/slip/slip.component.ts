@@ -7,7 +7,6 @@ import {
 import { LuInfoComponent } from '../../../financials/fee-structure/lu-info/lu-info.component';
 import { StudentInfo2Component } from '../../../financials/fee-structure/student-info2/student-info2.component';
 import { TitleComponent } from './title/title.component';
-import { ResultSlipService } from '../result-slip.service';
 import { MarksTableComponent } from './marks-table/marks-table.component';
 import { KeysComponent } from './keys/keys.component';
 import { BottomComponent } from './bottom/bottom.component';

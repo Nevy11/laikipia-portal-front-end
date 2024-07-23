@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { AcademicService } from '../academic.service';
 
 @Component({
   selector: 'hinv-result-slip',
@@ -7,10 +8,13 @@ import { Router } from '@angular/router';
   styleUrl: './result-slip.component.scss',
 })
 export class ResultSlipComponent {
-  currentYear = 1;
+  currentYear = this.academicService.currentYear;
   year: string = '';
   sem: string = '';
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router,
+    private academicService: AcademicService
+  ) {}
   Generate() {
     if (this.year === '1') {
       this.router.navigate(['academic', 'slip']);

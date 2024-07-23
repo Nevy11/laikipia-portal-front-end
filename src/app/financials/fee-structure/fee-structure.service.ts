@@ -7,21 +7,21 @@ import { formatDate } from '@angular/common';
   providedIn: 'root',
 })
 export class FeeStructureService {
-  studentName: string = 'Stephen Mainda Mongare';
-  programme: string = 'BACHELOR OF SCIENCE ';
-  course: string = 'COMPUTER SCIENCE';
-  department: string = 'COMPUTING AND INFORMATICS';
-  school: string = 'SCHOOL OF SCIENCE AND APPLIED TECHNOLOGY';
-  regNo: string = 'SC/COM/0032/22';
-  admissionYear: number = 2020;
-  yearOfStudy: string = 'HOLIDAY';
-  term: string = 'HOLIDAY';
-  studentType: string = 'GSSP'; // consider
-  schoolName: string = 'LAIKIPIA UNIVERSITY';
-  pOBox: string = 'P.O. Box 1100 – 20300 Nyahururu, Kenya';
-  Tel: string = '+254(0)20 267 1779/1';
-  email: string = 'abnopayroll@laikipia.ac.ke';
-  web: string = 'www.laikipia.ac.ke';
+  studentName: string = this.financeService.studentName;
+  programme: string = this.financeService.programme;
+  course: string = this.financeService.course;
+  department: string = this.financeService.department;
+  school: string = this.financeService.school;
+  regNo: string = this.financeService.regNo;
+  admissionYear: number = this.financeService.admissionYear;
+  yearOfStudy: string = this.financeService.yearOfStudy;
+  term: string = this.financeService.term;
+  studentType: string = this.financeService.studentType;
+  schoolName: string = this.financeService.schoolName;
+  pOBox: string = this.financeService.pOBox;
+  Tel: string = this.financeService.Tel;
+  email: string = this.financeService.email;
+  web: string = this.financeService.web;
 
   format = 'dd/MM/yyy';
   date = formatDate(17 / 9 / 2019, 'dd/MM/yyyy', 'en-US');
@@ -45,78 +45,6 @@ export class FeeStructureService {
       credit: 32323,
       balance: 324234,
     },
-    // {
-    //   no: 3,
-    //   date: this.date,
-    //   ref: 6.941,
-    //   description: 'Li',
-    //   debit: 4500,
-    //   credit: 32323,
-    //   balance: 324234,
-    // },
-    // {
-    //   no: 4,
-    //   date: this.date,
-    //   ref: 9.0122,
-    //   description: 'Be',
-    //   debit: 4500,
-    //   credit: 32323,
-    //   balance: 324234,
-    // },
-    // {
-    //   no: 5,
-    //   date: new Date(),
-    //   ref: 10.811,
-    //   description: 'B',
-    //   debit: 4500,
-    //   credit: 32323,
-    //   balance: 324234,
-    // },
-    // {
-    //   no: 6,
-    //   date: new Date(),
-    //   ref: 12.0107,
-    //   description: 'C',
-    //   debit: 4500,
-    //   credit: 32323,
-    //   balance: 324234,
-    // },
-    // {
-    //   no: 7,
-    //   date: new Date(),
-    //   ref: 14.0067,
-    //   description: 'N',
-    //   debit: 4500,
-    //   credit: 32323,
-    //   balance: 324234,
-    // },
-    // {
-    //   no: 8,
-    //   date: new Date(),
-    //   ref: 15.9994,
-    //   description: 'O',
-    //   debit: 4500,
-    //   credit: 32323,
-    //   balance: 324234,
-    // },
-    // {
-    //   no: 9,
-    //   date: new Date(),
-    //   ref: 18.9984,
-    //   description: 'F',
-    //   debit: 4500,
-    //   credit: 32323,
-    //   balance: 324234,
-    // },
-    // {
-    //   no: 10,
-    //   date: new Date(),
-    //   ref: 20.1797,
-    //   description: 'Ne',
-    //   debit: 4500,
-    //   credit: 32323,
-    //   balance: 324234,
-    // },
   ];
   year = this.financeService.year;
   sem = this.financeService.sem;

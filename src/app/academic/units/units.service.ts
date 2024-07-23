@@ -2,17 +2,19 @@ import { Injectable } from '@angular/core';
 import { Units } from './units';
 import { FinanceService } from '../../financials/finance.service';
 import { FeeStructureService } from '../../financials/fee-structure/fee-structure.service';
+import { DashboardService } from '../../dashboard/dashboard.service';
+import { AcademicService } from '../academic.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class UnitsService {
-  year = this.financeService.year;
-  sem = this.financeService.sem;
-  admissionYear = this.feeStructureService.admissionYear;
+  year = this.dashService.year;
+  sem = this.dashService.sem;
+  admissionYear = this.dashService.admissionYear;
   constructor(
-    private financeService: FinanceService,
-    private feeStructureService: FeeStructureService
+    private dashService: DashboardService,
+    private academicService: AcademicService
   ) {}
 
   units: Units[] = [

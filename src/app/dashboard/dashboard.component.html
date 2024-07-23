@@ -19,15 +19,15 @@
 
             <button
               mat-icon-button
-              class="more-button"
+              class="more-button btn"
               [matMenuTriggerFor]="menu"
               aria-label="Toggle menu"
             >
               <mat-icon>more_vert</mat-icon>
             </button>
             <mat-menu #menu="matMenu" xPosition="before">
-              <button mat-menu-item>Expand</button>
-              <button mat-menu-item>Remove</button>
+              <button mat-menu-item (click)="toRepository()">Repository</button>
+              <button mat-menu-item (click)="toEvaluation()">evaluation</button>
             </mat-menu>
           </mat-card-title>
         </mat-card-header>
@@ -38,7 +38,9 @@
             <div class="my-3">
               Year: {{ card.year }} semister: {{ card.sem }}
             </div>
-            <div class="my-3">Programme: {{ card.course }}</div>
+            <div class="my-3">
+              Programme: {{ card.programme }} ({{ card.course }})
+            </div>
             <div *ngIf="card.studentInfo" class="my-3">
               <div>
                 <h2 class="example-h2">progress</h2>
@@ -86,15 +88,17 @@
 
             <button
               mat-icon-button
-              class="more-button"
+              class="more-button btn"
               [matMenuTriggerFor]="menu"
               aria-label="Toggle menu"
             >
               <mat-icon>more_vert</mat-icon>
             </button>
             <mat-menu #menu="matMenu" xPosition="before">
-              <button mat-menu-item>Expand</button>
-              <button mat-menu-item>Remove</button>
+              <button mat-menu-item (click)="hostel('bookHostel')">
+                bookHostel
+              </button>
+              <button mat-menu-item (click)="hostel('history')">history</button>
             </mat-menu>
           </mat-card-title>
         </mat-card-header>
@@ -104,6 +108,12 @@
         >
           <!-- {{ card.content }} -->
           <hinv-hostels></hinv-hostels>
+          <div *ngIf="mychoice === 'bookHostel'">
+            <hinv-book-now-dashboard></hinv-book-now-dashboard>
+          </div>
+          <div *ngIf="mychoice === 'history'">
+            <hinv-history-book-hostels></hinv-history-book-hostels>
+          </div>
         </mat-card-content>
       </mat-card>
     </mat-grid-tile>
@@ -121,15 +131,19 @@
 
             <button
               mat-button
-              class="more-button"
+              class="more-button btn"
               [matMenuTriggerFor]="menu"
               aria-label="Toggle menu"
             >
               <mat-icon>more_vert</mat-icon>
             </button>
             <mat-menu #menu="matMenu" xPosition="before">
-              <button mat-menu-item>Expand</button>
-              <button mat-menu-item>Remove</button>
+              <button mat-menu-item (click)="toFeeStructure()">
+                Fee Structure
+              </button>
+              <button mat-menu-item (click)="toFeeStatement()">
+                Fee Statement
+              </button>
             </mat-menu>
           </mat-card-title>
         </mat-card-header>
@@ -160,15 +174,15 @@
 
             <button
               mat-icon-button
-              class="more-button"
+              class="more-button btn"
               [matMenuTriggerFor]="menu"
               aria-label="Toggle menu"
             >
               <mat-icon>more_vert</mat-icon>
             </button>
             <mat-menu #menu="matMenu" xPosition="before">
-              <button mat-menu-item>Expand</button>
-              <button mat-menu-item>Remove</button>
+              <button mat-menu-item>guide</button>
+              <button mat-menu-item>assistance</button>
             </mat-menu>
           </mat-card-title>
         </mat-card-header>

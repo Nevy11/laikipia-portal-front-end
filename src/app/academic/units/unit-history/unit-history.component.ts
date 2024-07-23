@@ -1,5 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { UnitsService } from '../units.service';
+import { DashboardService } from '../../../dashboard/dashboard.service';
 
 @Component({
   selector: 'hinv-unit-history',
@@ -7,7 +8,7 @@ import { UnitsService } from '../units.service';
   styleUrl: './unit-history.component.scss',
 })
 export class UnitHistoryComponent {
-  unitService = inject(UnitsService);
-  year = this.unitService.year;
-  sem: number = this.unitService.sem;
+  dashService = inject(DashboardService);
+  year = this.dashService.year;
+  sem: number = this.dashService.sem;
 }

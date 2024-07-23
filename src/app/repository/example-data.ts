@@ -1,47 +1,95 @@
 /** Example file/folder data. */
 export const files = [
   {
-    name: 'components',
+    name: 'Student info',
     type: 'folder',
     children: [
       {
-        name: 'src',
+        name: 'id',
         type: 'folder',
         children: [
           {
-            name: 'cdk',
+            name: 'school id',
             type: 'folder',
             children: [
-              { name: 'package.json', type: 'file' },
-              { name: 'BUILD.bazel', type: 'file' },
-            ]
+              { name: 'schoolId.pdf', type: 'file' },
+              // { name: 'schoolCard.pdf', type: 'file' },
+            ],
           },
-          { name: 'material', type: 'folder' }
-        ]
-      }
-    ]
+          {
+            name: 'national id',
+            type: 'folder',
+            children: [
+              {
+                name: 'nationalId.pdf',
+                type: 'file',
+              },
+            ],
+          },
+          {
+            name: 'birth certificate',
+            type: 'folder',
+            children: [
+              {
+                name: 'birthCertificate',
+                type: 'file',
+              },
+            ],
+          },
+        ],
+      },
+      {
+        name: 'certificates',
+        type: 'folder',
+        children: [],
+      },
+    ],
   },
   {
-    name: 'angular',
+    name: 'Fees',
     type: 'folder',
     children: [
       {
-        name: 'packages',
+        name: 'fee statement',
+        type: 'folder',
+        children: [{ name: 'feeStatement.pdf', type: 'file' }],
+      },
+      {
+        name: 'fee Structure',
         type: 'folder',
         children: [
-          { name: '.travis.yml', type: 'file' },
-          { name: 'firebase.json', type: 'file' }
-        ]
+          {
+            name: 'feeStructure',
+            type: 'file',
+          },
+        ],
       },
-      { name: 'package.json', type: 'file' }
-    ]
+    ],
   },
   {
-    name: 'angularjs',
+    name: 'Academics',
     type: 'folder',
     children: [
-      { name: 'gulpfile.js', type: 'file' },
-      { name: 'README.md', type: 'file' }
-    ]
-  }
+      {
+        name: 'Exam Card',
+        type: 'folder',
+        children: [
+          {
+            name: 'ExamCard.pdf',
+            type: 'file',
+          },
+        ],
+      },
+      {
+        name: 'Result Slip',
+        type: 'folder',
+        children: [
+          {
+            name: 'resultSlip.pdf',
+            type: 'file',
+          },
+        ],
+      },
+    ],
+  },
 ];
