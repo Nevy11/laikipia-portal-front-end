@@ -1,24 +1,28 @@
-<h2 mat-dialog-title>Dialog with elements</h2>
+<h2 mat-dialog-title>Paying School Fees</h2>
 <mat-dialog-content
-  >This dialog showcases the title, close, content and actions
-  elements.</mat-dialog-content
+  >Pay Your fees using mpesa to school's paybill.The task has been automated so
+  that you'll only enter the password to pay fees</mat-dialog-content
 >
 <div class="clearfix">
   <div class="floatend">
     <mat-dialog-actions>
-      <button mat-button (click)="mpesaOk()">Pay {{ balance }}</button>
+      <button mat-stroked-button class="btn" (click)="mpesaOk()">
+        Pay {{ balance | currency }}
+      </button>
     </mat-dialog-actions>
   </div>
 
   <div class="floatend">
     <mat-dialog-actions>
-      <button mat-button (click)="checkBalance()">check Mpesa Balance</button>
+      <button mat-button class="btn" (click)="checkBalance()">
+        check Mpesa Balance
+      </button>
     </mat-dialog-actions>
   </div>
 
   <div class="floatstart">
     <mat-dialog-actions>
-      <button mat-button mat-dialog-close>cancel</button>
+      <button mat-button mat-dialog-close class="btn">cancel</button>
     </mat-dialog-actions>
   </div>
 </div>

@@ -1,14 +1,14 @@
-.img {
-  animation: fade;
-  animation-timeline: view();
-  mix-blend-mode: plus-lighter;
-}
+// .img {
+//   animation: fade;
+//   animation-timeline: view();
+//   mix-blend-mode: plus-lighter;
+// }
 
-img:last-of-type {
-  animation-direction: reverse;
-}
-@keyframes fade {
-  to {
-    opacity: 0;
-  }
-}
+// img:last-of-type {
+//   animation-direction: reverse;
+// }
+// @keyframes fade {
+//   to {
+//     opacity: 0;
+//   }
+// }

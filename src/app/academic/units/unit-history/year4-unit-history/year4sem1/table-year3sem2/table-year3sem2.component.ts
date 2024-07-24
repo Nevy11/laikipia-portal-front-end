@@ -1,5 +1,5 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { UnitHistoryService } from '../../../unit-history.service';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { UnitsService } from '../../../../units.service';
 
 @Component({
   selector: 'hinv-table-year3sem2',
@@ -8,8 +8,8 @@ import { UnitHistoryService } from '../../../unit-history.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TableYear3sem2Component {
-  registeredUnits = this.unitHistoryService.registered_units;
+  registeredUnits = this.unitService.units3sem2;
   dataSource = this.registeredUnits;
-  @Input() displayedColumns!: string[];
-  constructor(private unitHistoryService: UnitHistoryService) {}
+  displayedColumns: string[] = ['unitCode', 'UnitName', 'Option', 'Status'];
+  constructor(private unitService: UnitsService) {}
 }

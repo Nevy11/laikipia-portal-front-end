@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Transaction } from '../cost/transactions';
+import { FinanceService } from '../finance.service';
 
 @Component({
   selector: 'hinv-cost-year2',
@@ -7,19 +8,13 @@ import { Transaction } from '../cost/transactions';
   styleUrl: './cost-year2.component.scss',
 })
 export class CostYear2Component {
-  displayedColumns: string[] = ['item', 'cost'];
-  transactions: Transaction[] = [
-    { item: 'Beach ball', cost: 4 },
-    { item: 'Towel', cost: 5 },
-    { item: 'Frisbee', cost: 2 },
-    { item: 'Sunscreen', cost: 4 },
-    { item: 'Cooler', cost: 25 },
-    { item: 'Swim suit', cost: 15 },
-  ];
+  displayedColumns: string[] = ['Expenditure', 'cost'];
 
-  /** Gets the total cost of all transactions. */
+  financeService = inject(FinanceService);
+  expenses = this.financeService.expense2;
+  /** Gets the total cost of all Fees. */
   getTotalCost() {
-    return this.transactions
+    return this.expenses
       .map((t) => t.cost)
       .reduce((acc, value) => acc + value, 0);
   }

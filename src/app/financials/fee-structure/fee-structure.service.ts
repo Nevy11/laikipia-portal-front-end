@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { PeriodicElement } from './fee-structure';
+import { feeStatement } from './fee-structure';
 import { FinanceService } from '../finance.service';
 import { formatDate } from '@angular/common';
 
@@ -26,7 +26,10 @@ export class FeeStructureService {
   format = 'dd/MM/yyy';
   date = formatDate(17 / 9 / 2019, 'dd/MM/yyyy', 'en-US');
 
-  ELEMENT_DATA: PeriodicElement[] = [
+  year = this.financeService.year;
+  sem = this.financeService.sem;
+  constructor(private financeService: FinanceService) {}
+  year1Sem1paidFees: feeStatement[] = [
     {
       no: 1,
       date: this.date,
@@ -46,7 +49,144 @@ export class FeeStructureService {
       balance: 324234,
     },
   ];
-  year = this.financeService.year;
-  sem = this.financeService.sem;
-  constructor(private financeService: FinanceService) {}
+  year1Sem2paidFees: feeStatement[] = [
+    {
+      no: 1,
+      date: this.date,
+      ref: 1.0079,
+      description: 'H',
+      debit: 4500,
+      credit: 32323,
+      balance: 324234,
+    },
+    {
+      no: 2,
+      date: this.date,
+      ref: 4.0026,
+      description: 'He',
+      debit: 4500,
+      credit: 32323,
+      balance: 324234,
+    },
+  ];
+  year2Sem1paidFees: feeStatement[] = [
+    {
+      no: 1,
+      date: this.date,
+      ref: 1.0079,
+      description: 'H',
+      debit: 4500,
+      credit: 32323,
+      balance: 324234,
+    },
+    {
+      no: 2,
+      date: this.date,
+      ref: 4.0026,
+      description: 'He',
+      debit: 4500,
+      credit: 32323,
+      balance: 324234,
+    },
+  ];
+  year2Sem2paidFees: feeStatement[] = [
+    {
+      no: 1,
+      date: this.date,
+      ref: 1.0079,
+      description: 'H',
+      debit: 4500,
+      credit: 32323,
+      balance: 324234,
+    },
+    {
+      no: 2,
+      date: this.date,
+      ref: 4.0026,
+      description: 'He',
+      debit: 4500,
+      credit: 32323,
+      balance: 324234,
+    },
+  ];
+  year3Sem1paidFees: feeStatement[] = [
+    {
+      no: 1,
+      date: this.date,
+      ref: 1.0079,
+      description: 'H',
+      debit: 4500,
+      credit: 32323,
+      balance: 324234,
+    },
+    {
+      no: 2,
+      date: this.date,
+      ref: 4.0026,
+      description: 'He',
+      debit: 4500,
+      credit: 32323,
+      balance: 324234,
+    },
+  ];
+  year3Sem2paidFees: feeStatement[] = [
+    {
+      no: 1,
+      date: this.date,
+      ref: 1.0079,
+      description: 'H',
+      debit: 4500,
+      credit: 32323,
+      balance: 324234,
+    },
+    {
+      no: 2,
+      date: this.date,
+      ref: 4.0026,
+      description: 'He',
+      debit: 4500,
+      credit: 32323,
+      balance: 324234,
+    },
+  ];
+  year4Sem1paidFees: feeStatement[] = [
+    {
+      no: 1,
+      date: this.date,
+      ref: 1.0079,
+      description: 'H',
+      debit: 4500,
+      credit: 32323,
+      balance: 324234,
+    },
+    {
+      no: 2,
+      date: this.date,
+      ref: 4.0026,
+      description: 'He',
+      debit: 4500,
+      credit: 32323,
+      balance: 324234,
+    },
+  ];
+  year4Sem2paidFees: feeStatement[] = [
+    {
+      no: 1,
+      date: this.date,
+      ref: 1.0079,
+      description: 'H',
+      debit: 4500,
+      credit: 32323,
+      balance: 324234,
+    },
+    {
+      no: 2,
+      date: this.date,
+      ref: 4.0026,
+      description: 'He',
+      debit: 4500,
+      credit: 32323,
+      balance: 324234,
+    },
+  ];
 }

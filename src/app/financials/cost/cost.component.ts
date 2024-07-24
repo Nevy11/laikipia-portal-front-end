@@ -9,7 +9,7 @@ import { Transaction } from './transactions';
   styleUrl: './cost.component.scss',
 })
 export class CostComponent implements OnInit {
-  expenses = this.financeService.expense;
+  expenses = this.financeService.expense1;
   // costs = this.activateRoute.data.pipe(pluck('cost'));
 
   @ViewChild('paid', { static: true }) paid!: ElementRef;
@@ -19,27 +19,22 @@ export class CostComponent implements OnInit {
     private financeService: FinanceService,
     private activateRoute: ActivatedRoute
   ) {}
-  ngOnInit(): void {
-    // this.activateRoute.data.subscribe((data) => {
-    //   console.log(data);
-    // });
-    // this.total.nativeElement.innerText = this.financeService.total;
-    // this.paid.nativeElement.innerText = this.financeService.total;
-    // this.balance.nativeElement.innerText = this.financeService.balance;
-  }
-  displayedColumns: string[] = ['item', 'cost'];
-  transactions: Transaction[] = [
-    { item: 'Beach ball', cost: 4 },
-    { item: 'Towel', cost: 5 },
-    { item: 'Frisbee', cost: 2 },
-    { item: 'Sunscreen', cost: 4 },
-    { item: 'Cooler', cost: 25 },
-    { item: 'Swim suit', cost: 15 },
-  ];
+  ngOnInit(): void {}
+  displayedColumns: string[] = ['Expenditure', 'cost'];
+  // transactions: Transaction[] = [
+  //   { item: 'Beach ball', cost: 4 },
+  //   { item: 'Towel', cost: 5 },
+  //   { item: 'Frisbee', cost: 2 },
+  //   { item: 'Sunscreen', cost: 4 },
+  //   { item: 'Cooler', cost: 25 },
+  //   { item: 'Swim suit', cost: 15 },
+  // ];
+  // Expenditure: 'Computer power',
+  //     cost: 5000,
 
   /** Gets the total cost of all transactions. */
   getTotalCost() {
-    return this.transactions
+    return this.expenses
       .map((t) => t.cost)
       .reduce((acc, value) => acc + value, 0);
   }

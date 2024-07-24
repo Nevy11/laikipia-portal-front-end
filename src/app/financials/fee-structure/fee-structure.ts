@@ -1,6 +1,6 @@
 export interface FeeStructure {}
 
-export interface PeriodicElement {
+export interface feeStatement {
   no: number;
   date: string;
   ref: number;

@@ -11,10 +11,10 @@ export class AppFinanceMpesaComponent {
   balance: number = this.dashService.feeBalance;
   // auth = this.appFinanceService.getAuthentication();
   checkBalance() {
-    this.balance = 5000;
+    alert('A message has been sent to your phone on the balance of your fees');
   }
   mpesaOk() {
-    this.balance += 200;
+    alert('Please enter your password to the prompt');
   }
   constructor(
     private http: HttpClient,

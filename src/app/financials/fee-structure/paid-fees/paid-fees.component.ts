@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { PeriodicElement } from '../fee-structure';
 import { FeeStructureService } from '../fee-structure.service';
 @Component({
   selector: 'hinv-paid-fees',
@@ -7,8 +6,9 @@ import { FeeStructureService } from '../fee-structure.service';
   styleUrl: './paid-fees.component.scss',
 })
 export class PaidFeesComponent {
-  ELEMENT_DATA: PeriodicElement[] = this.feeStructureService.ELEMENT_DATA;
-
+  paidFees = this.feeStructureService.year1Sem1paidFees;
+  sem = this.feeStructureService.sem;
+  admissionYear = this.feeStructureService.admissionYear;
   displayedColumns: string[] = [
     'no',
     'date',
@@ -18,6 +18,6 @@ export class PaidFeesComponent {
     'credit',
     'balance',
   ];
-  dataSource = this.ELEMENT_DATA;
+  dataSource = this.paidFees;
   constructor(private feeStructureService: FeeStructureService) {}
 }

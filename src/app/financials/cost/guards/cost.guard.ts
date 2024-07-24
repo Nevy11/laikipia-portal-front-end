@@ -21,6 +21,6 @@ export class CostGuard implements Resolve<Finance[]> {
   ): MaybeAsync<Finance[]> {
     // After finishing with the front end intergrate the
     // backend api's with this data
-    return this.financeService.expense;
+    return this.financeService.expense1;
   }
 }

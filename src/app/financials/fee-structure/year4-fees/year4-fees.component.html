@@ -3,18 +3,15 @@
 <hinv-year3-fees></hinv-year3-fees>
 <h3 class="mt-3">Year 4</h3>
 <div *ngIf="sem === 1">
-  <div class="my-4">SEMESTER 1 {{ admissionYear }}/{{ admissionYear + 1 }}</div>
   <div>
-    <hinv-paid-fees></hinv-paid-fees>
+    <hinv-paid4sem1></hinv-paid4sem1>
   </div>
 </div>
 <div *ngIf="sem === 2">
-  <div class="my-4">SEMESTER 1 {{ admissionYear }}/{{ admissionYear + 1 }}</div>
   <div>
-    <hinv-paid-fees></hinv-paid-fees>
+    <hinv-paid4sem1></hinv-paid4sem1>
   </div>
-  <div class="my-4">SEMESTER 2 {{ admissionYear }}/{{ admissionYear + 1 }}</div>
   <div>
-    <hinv-paid-fees></hinv-paid-fees>
+    <hinv-paid4sem2></hinv-paid4sem2>
   </div>
 </div>

@@ -1,18 +1,40 @@
 <hinv-year1-fees></hinv-year1-fees>
-<h3 class="mt-3">Year 2</h3>
-<div *ngIf="sem === 1">
-  <div class="my-4">SEMESTER 1 {{ admissionYear }}/{{ admissionYear + 1 }}</div>
+
+<div *ngIf="year === 2 && sem === 1">
+  <h3 class="mt-3">Year 2</h3>
+
   <div>
-    <hinv-paid-fees></hinv-paid-fees>
+    <hinv-paid2sem1></hinv-paid2sem1>
   </div>
 </div>
-<div *ngIf="sem === 2">
-  <div class="my-4">SEMESTER 1 {{ admissionYear }}/{{ admissionYear + 1 }}</div>
+<div *ngIf="year === 2 && sem === 2">
   <div>
-    <hinv-paid-fees></hinv-paid-fees>
+    <hinv-paid2sem1></hinv-paid2sem1>
   </div>
   <div class="my-4">SEMESTER 2 {{ admissionYear }}/{{ admissionYear + 1 }}</div>
   <div>
-    <hinv-paid-fees></hinv-paid-fees>
+    <hinv-paid2sem2></hinv-paid2sem2>
+  </div>
+</div>
+
+<div *ngIf="year === 3">
+  <h3 class="mt-3">Year 2</h3>
+
+  <div>
+    <hinv-paid2sem1></hinv-paid2sem1>
+  </div>
+  <div>
+    <hinv-paid2sem2></hinv-paid2sem2>
+  </div>
+</div>
+<!-- 4 year -->
+<div *ngIf="year === 4">
+  <h3 class="mt-3">Year 2</h3>
+
+  <div>
+    <hinv-paid2sem1></hinv-paid2sem1>
+  </div>
+  <div>
+    <hinv-paid2sem2></hinv-paid2sem2>
   </div>
 </div>

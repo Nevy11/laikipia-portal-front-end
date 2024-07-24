@@ -8,9 +8,7 @@
         unit history for semister 1 year 1
       </mat-panel-description>
     </mat-expansion-panel-header>
-    <hinv-table-year2-sem1
-      [displayedColumns]="displayedColumns"
-    ></hinv-table-year2-sem1>
+    <hinv-table-year2-sem1></hinv-table-year2-sem1>
   </mat-expansion-panel>
   <mat-expansion-panel
     (opened)="panelOpenState.set(true)"
@@ -22,8 +20,6 @@
         Currently I am {{ panelOpenState() ? "open" : "closed" }}
       </mat-panel-description>
     </mat-expansion-panel-header>
-    <hinv-table-year2-sem2
-      [displayedColumns]="displayedColumns"
-    ></hinv-table-year2-sem2>
+    <hinv-table-year2-sem2></hinv-table-year2-sem2>
   </mat-expansion-panel>
 </mat-accordion>

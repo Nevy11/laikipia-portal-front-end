@@ -32,6 +32,13 @@ import { Year2FeesComponent } from './fee-structure/year2-fees/year2-fees.compon
 import { Year3FeesComponent } from './fee-structure/year3-fees/year3-fees.component';
 import { Year4FeesComponent } from './fee-structure/year4-fees/year4-fees.component';
 import { TotalComponent } from './fee-structure/total/total.component';
+import { Paid1sem2Component } from './fee-structure/paid1sem2/paid1sem2.component';
+import { Paid2sem1Component } from './fee-structure/paid2sem1/paid2sem1.component';
+import { Paid2sem2Component } from './fee-structure/paid2sem2/paid2sem2.component';
+import { Paid3sem1Component } from './fee-structure/paid3sem1/paid3sem1.component';
+import { Paid3sem2Component } from './fee-structure/paid3sem2/paid3sem2.component';
+import { Paid4sem1Component } from './fee-structure/paid4sem1/paid4sem1.component';
+import { Paid4sem2Component } from './fee-structure/paid4sem2/paid4sem2.component';
 
 @NgModule({
   declarations: [
@@ -58,6 +65,13 @@ import { TotalComponent } from './fee-structure/total/total.component';
     Year3FeesComponent,
     Year4FeesComponent,
     TotalComponent,
+    Paid1sem2Component,
+    Paid2sem1Component,
+    Paid2sem2Component,
+    Paid3sem1Component,
+    Paid3sem2Component,
+    Paid4sem1Component,
+    Paid4sem2Component,
   ],
   imports: [
     CommonModule,

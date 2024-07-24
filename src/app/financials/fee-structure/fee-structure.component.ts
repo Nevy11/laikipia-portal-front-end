@@ -1,8 +1,8 @@
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Component, ViewChild, ViewEncapsulation, inject } from '@angular/core';
 import { map } from 'rxjs';
-import { PeriodicElement } from './fee-structure';
 import { FeeStructureService } from './fee-structure.service';
+import { DashboardService } from '../../dashboard/dashboard.service';
 
 @Component({
   selector: 'hinv-fee-structure',
@@ -17,14 +17,15 @@ export class FeeStructureComponent {
       return data.matches;
     })
   );
-  ELEMENT_DATA: PeriodicElement[] = this.feeStructureService.ELEMENT_DATA;
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-  dataSource = this.ELEMENT_DATA;
-  sem = this.feeStructureService.sem;
-  year = this.feeStructureService.year;
+  // ELEMENT_DATA: PeriodicElement[] = this.feeStructureService.ELEMENT_DATA;
+  sem = this.dashService.sem;
+  year = this.dashService.year;
   admissionYear = this.feeStructureService.admissionYear;
   // @ViewChild('feeStatement', { static: true }) feeStatement!: HTMLBodyElement;
-  constructor(private feeStructureService: FeeStructureService) {}
+  constructor(
+    private feeStructureService: FeeStructureService,
+    private dashService: DashboardService
+  ) {}
   printDiv(divName: string) {
     const contents = document.getElementById(divName)?.innerHTML;
     const originalContents = document.body.innerHTML;

@@ -9,5 +9,5 @@ import { CurriculumService } from '../curriculum.service';
 export class Year4sem1Component {
   curriculumService = inject(CurriculumService);
   displayedColumns: string[] = ['unitCode', 'unitName', 'option'];
-  dataSource = this.curriculumService.curriculum;
+  dataSource = this.curriculumService.curriculum4sem1;
 }
