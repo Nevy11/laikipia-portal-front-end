@@ -10,7 +10,7 @@ export class DashboardService {
   studentLastName: string = 'Mongare';
   // phoneStudentName: string = 'Stephen';
   regNo: string = 'SC/COM/0032/22';
-  year: number = 2;
+  year: number = 4;
   sem: number = 2;
 
   progressValue: number = 70;
@@ -24,7 +24,7 @@ export class DashboardService {
   admissionYear: number = 2020;
   isRegistrationOpen: boolean = true;
   paidFees = 95000;
-  totalFees = 10500;
+  totalFees = 95000;
   feeBalance: number = this.paidFees - this.totalFees;
   // balance = this.paid - this.total;
   studentName: string = 'Stephen Mainda Mongare';

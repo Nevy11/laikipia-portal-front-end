@@ -1,0 +1,9 @@
+<table mat-table [dataSource]="dataSource">
+  <mat-text-column name="unitCode"></mat-text-column>
+  <mat-text-column name="UnitName"></mat-text-column>
+  <mat-text-column name="signature"></mat-text-column>
+  <mat-text-column name="date"></mat-text-column>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+</table>

@@ -19,5 +19,14 @@ export class ResultSlipComponent {
     if (this.year === '1') {
       this.router.navigate(['academic', 'slip']);
     }
+    if (this.year === '2') {
+      this.router.navigate(['academic', 'slip2']);
+    }
+    if (this.year === '3') {
+      this.router.navigate(['academic', 'slip3']);
+    }
+    if (this.year === '4') {
+      this.router.navigate(['academic', 'slip4']);
+    }
   }
 }

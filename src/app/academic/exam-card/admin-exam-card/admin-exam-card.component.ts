@@ -9,6 +9,7 @@ import { ExamCardTableComponent } from './exam-card-table/exam-card-table.compon
 import { StudentInfoExamCardComponent } from './student-info-exam-card/student-info-exam-card.component';
 import { SignaturesComponent } from './signatures/signatures.component';
 import { NotesComponent } from './notes/notes.component';
+import { DashboardService } from '../../../dashboard/dashboard.service';
 
 @Component({
   selector: 'hinv-admin-exam-card',
@@ -17,6 +18,8 @@ import { NotesComponent } from './notes/notes.component';
 })
 export class AdminExamCardComponent implements AfterViewInit {
   vcr = inject(ViewContainerRef);
+  dashService = inject(DashboardService);
+  feeBalance = this.dashService.feeBalance;
   ngAfterViewInit(): void {
     this.vcr.createComponent(ExamCardTitleComponent);
     this.vcr.createComponent(StudentInfoExamCardComponent);

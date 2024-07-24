@@ -10,9 +10,6 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatSelectModule } from '@angular/material/select';
 import { FormsModule } from '@angular/forms';
 import { CurrentExamCardComponent } from './exam-card/current-exam-card/current-exam-card.component';
-import { PreviousExamCardComponent } from './exam-card/previous-exam-card/previous-exam-card.component';
-import { SupExamCardComponent } from './exam-card/sup-exam-card/sup-exam-card.component';
-import { SpecExamCardComponent } from './exam-card/spec-exam-card/spec-exam-card.component';
 import { AdminExamCardComponent } from './exam-card/admin-exam-card/admin-exam-card.component';
 import { ExamCardTitleComponent } from './exam-card/admin-exam-card/exam-card-title/exam-card-title.component';
 import { StudentInfoExamCardComponent } from './exam-card/admin-exam-card/student-info-exam-card/student-info-exam-card.component';
@@ -23,6 +20,9 @@ import { LeftSignaturesComponent } from './exam-card/admin-exam-card/signatures/
 import { RightSignaturesComponent } from './exam-card/admin-exam-card/signatures/right-signatures/right-signatures.component';
 import { CurrentExamCardTableComponent } from './exam-card/current-exam-card/current-exam-card-table/current-exam-card-table.component';
 import { NotesComponent } from './exam-card/admin-exam-card/notes/notes.component';
+import { PreviousComponent } from './exam-card/previous/previous.component';
+import { SpecComponent } from './exam-card/spec/spec.component';
+import { SupComponent } from './exam-card/sup/sup.component';
 
 @NgModule({
   declarations: [
@@ -31,9 +31,6 @@ import { NotesComponent } from './exam-card/admin-exam-card/notes/notes.componen
     ExamCardComponent,
     ResultSlipComponent,
     CurrentExamCardComponent,
-    PreviousExamCardComponent,
-    SupExamCardComponent,
-    SpecExamCardComponent,
     AdminExamCardComponent,
     ExamCardTitleComponent,
     StudentInfoExamCardComponent,
@@ -43,6 +40,9 @@ import { NotesComponent } from './exam-card/admin-exam-card/notes/notes.componen
     RightSignaturesComponent,
     CurrentExamCardTableComponent,
     NotesComponent,
+    PreviousComponent,
+    SpecComponent,
+    SupComponent,
   ],
   imports: [
     CommonModule,

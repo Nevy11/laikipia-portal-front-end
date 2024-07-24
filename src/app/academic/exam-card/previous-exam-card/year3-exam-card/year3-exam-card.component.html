@@ -1,0 +1,54 @@
+<!-- <form>
+  <label for="Select an option"> Select The year </label>
+  <mat-radio-group [(ngModel)]="yearSelected" aria-label="Select an option">
+    <mat-radio-button value="1">Year 1</mat-radio-button>
+    <mat-radio-button value="2">Year 2</mat-radio-button>
+    <mat-radio-button value="3">Year 3</mat-radio-button>
+  </mat-radio-group>
+</form>
+<div *ngIf="yearSelected === '1'">
+  <hinv-year3-year-selected1></hinv-year3-year-selected1>
+</div>
+<div *ngIf="yearSelected === '2'">
+  <hinv-year3-year-selected2></hinv-year3-year-selected2>
+</div>
+<div *ngIf="yearSelected === '3'">
+  <hinv-year-selected3></hinv-year-selected3>
+</div> -->
+<!-- <label id="example-radio-group-label">Pick your favorite season</label>
+<mat-radio-group
+  aria-labelledby="example-radio-group-label"
+  class="example-radio-group"
+  [(ngModel)]="favoriteSeason"
+> -->
+<!-- @for (season of seasons; track season) {
+  <mat-radio-button class="example-radio-button" [value]="season">{{
+    season
+  }}</mat-radio-button>
+  }
+</mat-radio-group>
+<div>Your favorite season is: {{ favoriteSeason }}</div> -->
+<label for="selectingYear">Pick the year's Exam Card</label><br />
+<mat-radio-group
+  [(ngModel)]="yearSelected"
+  aria-label="Select an option"
+  aria-labelledby="selectingYear"
+  class="my-5 mx-3 py-5"
+>
+  <mat-radio-button value="1">Year 1</mat-radio-button>
+  <mat-radio-button value="2">Year 2</mat-radio-button>
+  <mat-radio-button value="3">Year 3</mat-radio-button>
+</mat-radio-group>
+<div *ngIf="yearSelected === '1'">
+  <hinv-one></hinv-one>
+  <!-- <hinv-year3-year-selected1></hinv-year3-year-selected1> -->
+</div>
+<div *ngIf="yearSelected === '2'">
+  <hinv-two></hinv-two>
+  <!-- <hinv-year3-year-selected2></hinv-year3-year-selected2> -->
+</div>
+<div *ngIf="yearSelected === '3'">
+  <hinv-three></hinv-three>
+  <!-- <hinv-year-selected3></hinv-year-selected3> -->
+</div>
+<!-- </mat-radio-group> -->

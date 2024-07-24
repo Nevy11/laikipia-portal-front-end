@@ -1,0 +1,10 @@
+<mat-radio-group [(ngModel)]="yearSelected" aria-label="Select an option">
+  <mat-radio-button value="1">Year 1</mat-radio-button>
+  <mat-radio-button value="2">Year 2</mat-radio-button>
+</mat-radio-group>
+<div *ngIf="yearSelected === '1'">
+  <hinv-year-selected1></hinv-year-selected1>
+</div>
+<div *ngIf="yearSelected === '2'">
+  <hinv-year-selected2></hinv-year-selected2>
+</div>

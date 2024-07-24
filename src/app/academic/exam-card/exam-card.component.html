@@ -14,14 +14,17 @@
   <hinv-current-exam-card></hinv-current-exam-card>
 </div>
 <div *ngIf="selectedButton === 'pExamCard'">
-  <hinv-previous-exam-card></hinv-previous-exam-card>
+  <hinv-previous></hinv-previous>
 </div>
 <div *ngIf="selectedButton === 'supExamCard'">
-  <hinv-sup-exam-card></hinv-sup-exam-card>
+  <hinv-sup></hinv-sup>
+  <!-- <hinv-sup-exam-card></hinv-sup-exam-card> -->
 </div>
 <div *ngIf="selectedButton === 'specExamCard'">
-  <hinv-spec-exam-card></hinv-spec-exam-card>
+  <hinv-spec></hinv-spec>
+  <!-- <hinv-spec-exam-card></hinv-spec-exam-card> -->
 </div>
 <div *ngIf="selectedButton === 'adminExamCard'">
   <hinv-admin-exam-card></hinv-admin-exam-card>
 </div>
+<!-- <router-outlet></router-outlet> -->
