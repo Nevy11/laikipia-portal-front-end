@@ -18,13 +18,13 @@ import { myData } from './testing';
   encapsulation: ViewEncapsulation.None,
 })
 export class TestingComponent implements AfterContentInit {
-  vcr = inject(ViewContainerRef);
-  constructor(private testingService: TestingService) {}
+  // vcr = inject(ViewContainerRef);
+  // constructor(private testingService: TestingService) {}
 
-  addName$ = this.testingService.addName;
-  showName: boolean = true;
-  getName$ = this.testingService.getData$;
-  updateName = this.testingService.updateName$;
+  // addName$ = this.testingService.addName;
+  // showName: boolean = true;
+  // getName$ = this.testingService.getData$;
+  // updateName = this.testingService.updateName$;
   // deleteName$ = this.testingService.deleteName$.subscribe((x) =>
   // console.log('x')
   // );
