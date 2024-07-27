@@ -6,6 +6,9 @@ import {
   ViewEncapsulation,
   inject,
 } from '@angular/core';
+import { TestingService } from './testing.service';
+import { filter, map } from 'rxjs';
+import { myData } from './testing';
 
 @Component({
   selector: 'hinv-testing',
@@ -16,6 +19,14 @@ import {
 })
 export class TestingComponent implements AfterContentInit {
   vcr = inject(ViewContainerRef);
+  constructor(private testingService: TestingService) {}
 
+  addName$ = this.testingService.addName;
+  showName: boolean = true;
+  getName$ = this.testingService.getData$;
+  updateName = this.testingService.updateName$;
+  // deleteName$ = this.testingService.deleteName$.subscribe((x) =>
+  // console.log('x')
+  // );
   ngAfterContentInit(): void {}
 }

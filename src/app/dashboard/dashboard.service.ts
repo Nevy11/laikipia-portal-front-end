@@ -10,8 +10,8 @@ export class DashboardService {
   studentLastName: string = 'Mongare';
   // phoneStudentName: string = 'Stephen';
   regNo: string = 'SC/COM/0032/22';
-  year: number = 4;
-  sem: number = 2;
+  year: number = 1;
+  sem: number = 1;
 
   progressValue: number = 70;
   // course: string = 'Bachelor of science(Computer Science';

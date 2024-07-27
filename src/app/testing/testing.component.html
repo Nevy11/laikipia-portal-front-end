@@ -1,0 +1,12 @@
+<!-- <button
+  mat-button
+  class="mx-5 my-5 btn bg-success text-white"
+  (click)="ongezaJina()"
+>
+  Ongeza
+</button> -->
+<!-- <div *ngIf="showName"> -->
+<div *ngIf="getName$ | async as name">
+  <div class="my-5 mx-5 h5">{{ name | json }}</div>
+</div>
+<!-- </div> -->

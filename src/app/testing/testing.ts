@@ -9,6 +9,10 @@ export interface Rooms {
   checkoutTime: Date;
   rating: number;
 }
+export interface myData {
+  id: number;
+  title: string;
+}
 // testing component
 
 // name = 'Hannetsiagas';
