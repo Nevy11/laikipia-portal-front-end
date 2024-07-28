@@ -79,6 +79,8 @@ const routes: Routes = [
       import('./timetable/timetable.module').then((m) => m.TimetableModule),
   },
   { path: 'dragNdrop', loadChildren: () => import('./drag-ndrop/drag-ndrop.module').then(m => m.DragNdropModule) },
+  { path: 'signUp', loadChildren: () => import('./sign-up/sign-up.module').then(m => m.SignUpModule) },
+  { path: 'addCredentials', loadChildren: () => import('./sign-up/add-credentials/add-credentials.module').then(m => m.AddCredentialsModule) },
 
   {
     path: '**',

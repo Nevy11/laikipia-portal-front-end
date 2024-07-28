@@ -2,13 +2,8 @@ import {
   AfterContentInit,
   ChangeDetectionStrategy,
   Component,
-  ViewContainerRef,
   ViewEncapsulation,
-  inject,
 } from '@angular/core';
-import { TestingService } from './testing.service';
-import { filter, map } from 'rxjs';
-import { myData } from './testing';
 
 @Component({
   selector: 'hinv-testing',
