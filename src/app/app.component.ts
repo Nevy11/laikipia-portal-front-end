@@ -7,6 +7,8 @@ import {
 import { NavigationComponent } from './navigation/navigation.component';
 import { AppService } from './app.service';
 import { mergeMap } from 'rxjs';
+import { LoginComponent } from './login/login.component';
+import { AddCredentialsComponent } from './sign-up/add-credentials/add-credentials.component';
 
 @Component({
   selector: 'hinv-root',
@@ -18,13 +20,7 @@ export class AppComponent implements AfterViewInit {
   vcr = inject(ViewContainerRef);
   ngAfterViewInit(): void {
     this.vcr.createComponent(NavigationComponent);
+    // this.vcr.createComponent(AddCredentialsComponent);
   }
   constructor(private appservice: AppService) {}
-  usersInfo$ = this.appservice.usersInfo$.subscribe((resp) => {
-    console.log(resp);
-  });
-  removeStudent$ = this.appservice.removeUser$.subscribe(() => {});
-  findOneStudent$ = this.appservice.findOneStudent$.subscribe((resp) => {
-    console.log(resp);
-  });
 }

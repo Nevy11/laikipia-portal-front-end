@@ -22,11 +22,56 @@ export class AppService {
   addStudent(data: SignUp) {
     return this.http.post('http://localhost:3000/school', data);
   }
-  id = 'sc/com/0032/22';
-  myId = 38;
-  removeUser$ = this.http.delete(`http://localhost:3000/school/${this.myId}`);
-  findIdNo = 11;
+  myId = 'sccom003222';
+  myBody = {
+    regNo: this.myId,
+    firstName: 'Samuel',
+
+    middleName: 'ongwae',
+
+    lastName: 'Mongare',
+
+    course: 'BACHLOR OF SCIENCE',
+
+    programme: 'health records',
+
+    year: 4,
+
+    sem: 2,
+  };
+  updateStudentId = 'sccom003522';
+  updatedBody = {
+    regNo: this.updateStudentId,
+    firstName: 'Stephen',
+
+    middleName: 'Mainda',
+
+    lastName: 'Mongare',
+
+    course: 'BACHLOR OF SCIENCE',
+
+    programme: 'Computer Science',
+
+    year: 3,
+
+    sem: 1,
+  };
+  id = 'sccom003522';
+  addStudent$ = this.http.post(
+    'http://localhost:3000/school-database',
+    this.myBody
+  );
+
+  removeUser$ = this.http.delete(
+    `http://localhost:3000/school-database/${this.myId}`
+  );
+
   findOneStudent$ = this.http.get(
-    `http://localhost:3000/school/${this.findIdNo}`
+    `http://localhost:3000/school-database/${this.id}`
+  );
+
+  updateStudent$ = this.http.put(
+    `http://localhost:3000/school-database/${this.updateStudentId}`,
+    this.updatedBody
   );
 }

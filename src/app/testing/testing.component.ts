@@ -12,16 +12,9 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
 })
-export class TestingComponent implements AfterContentInit {
-  // vcr = inject(ViewContainerRef);
-  // constructor(private testingService: TestingService) {}
-
-  // addName$ = this.testingService.addName;
-  // showName: boolean = true;
-  // getName$ = this.testingService.getData$;
-  // updateName = this.testingService.updateName$;
-  // deleteName$ = this.testingService.deleteName$.subscribe((x) =>
-  // console.log('x')
-  // );
-  ngAfterContentInit(): void {}
+export class TestingComponent {
+  hide = true;
+  change_hiding() {
+    this.hide = !this.hide;
+  }
 }

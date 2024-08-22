@@ -14,17 +14,16 @@ export class AddCredentialsComponent implements OnInit {
     this.appService.addStudent(this.body).subscribe(() => {});
   }
   body = {
-    firstName: 'Judith',
+    regNo: 'sc/com/0032/22',
+    firstName: 'Hannet',
 
     middleName: 'Kemunto',
 
     lastName: 'Mongare',
 
-    regNo: 'sc/com/0032/22',
-
     course: 'BACHLOR OF SCIENCE',
 
-    programme: 'CIVIL ENGINEERING',
+    programme: 'Journalism',
 
     year: 4,
 
