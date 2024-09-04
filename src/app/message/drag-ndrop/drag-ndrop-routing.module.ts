@@ -6,6 +6,6 @@ const routes: Routes = [{ path: '', component: DragNdropComponent }];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class DragNdropRoutingModule { }
+export class DragNdropRoutingModule {}
